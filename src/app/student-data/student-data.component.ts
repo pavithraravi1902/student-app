@@ -6,20 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-data.component.scss']
 })
 export class StudentDataComponent implements OnInit {
-  heading = "Student-Login";
-  uName = "";
-  passWord = "";
-  content: string="";
+  public heading = "Student-Login";
+  public uName = "";
+  public passWord = "";
+  public content: string = "";
+  public container: Array<string> = [];
   constructor() { }
 
   ngOnInit(): void {
   }
   addInfo() {
-    this.content=this.uName;
-    this.content=this.passWord;
+    this.content = this.uName;
+    this.content = this.passWord;
+    this.container.push("username:" + this.uName);
+    this.container.push("password:" + this.passWord);
     this.uName = "";
-    this.passWord="";
+    this.passWord = "";
+    console.log(this.container);
   }
-  
-
 }
