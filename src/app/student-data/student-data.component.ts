@@ -9,19 +9,20 @@ export class StudentDataComponent implements OnInit {
   public heading = "Student-Login";
   public uName = "";
   public passWord = "";
-  public content: string = "";
-  public container: Array<string> = [];
+  public unameContainer: Array<string> = [];
+  public passwordContainer: Array<string> = [];
   constructor() { }
 
   ngOnInit(): void {
   }
   addInfo() {
-    this.content = this.uName;
-    this.content = this.passWord;
-    this.container.push("username:" + this.uName);
-    this.container.push("password:" + this.passWord);
+    if(this.uName=="" && this.passWord==""){
+      console.log("Fill Required Field");
+    }else{
+      this.unameContainer.push("username:" + this.uName);
+      this.passwordContainer.push("password:" + this.passWord);
+    };
     this.uName = "";
     this.passWord = "";
-    console.log(this.container);
   }
 }
