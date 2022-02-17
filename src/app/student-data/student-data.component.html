@@ -1,0 +1,16 @@
+<div style="text-align:center" class="container">
+    <div>
+        <h1>{{heading}}</h1>
+        <div class="body">
+            Username:
+            <input style="background-color:purple;" type="text" name="uname" id="uname" [(ngModel)]="uName">
+            <br />
+            <br />
+            Password:
+            <input style="background-color:purple;" type="password" name="check" id="check" [(ngModel)]="passWord">
+            <br />
+            <br />
+            <button type="submit" (click)="addInfo()">Login</button>
+        </div>
+    </div>
+</div>
