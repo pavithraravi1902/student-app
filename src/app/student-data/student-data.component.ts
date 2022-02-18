@@ -16,9 +16,14 @@ export class StudentDataComponent implements OnInit {
   ngOnInit(): void {
   }
   addInfo() {
-    if(this.uName=="" && this.passWord==""){
-      console.log("Fill Required Field");
-    }else{
+    /* if (this.uName == "" && this.passWord=="") {
+       console.log("Fill Required Field");
+     } else*/
+    if (this.uName == "") {
+      console.log("Enter Your Name");
+    } else if (this.passWord == "" && this.passWord.length <= 8) {
+      console.log("Enter Strong Password");
+    } else {
       this.unameContainer.push("username:" + this.uName);
       this.passwordContainer.push("password:" + this.passWord);
     };
