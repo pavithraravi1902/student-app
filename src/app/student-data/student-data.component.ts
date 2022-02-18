@@ -6,16 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-data.component.scss']
 })
 export class StudentDataComponent implements OnInit {
-  public heading = "Student-Login";
-  public uName = "";
-  public passWord = "";
+  public heading:string = "Student-Login";
+  public uName:string = "";
+  public passWord:string = "";
   public unameContainer: Array<string> = [];
   public passwordContainer: Array<string> = [];
   constructor() { }
 
   ngOnInit(): void {
   }
-  addInfo() {
+  addInfo():any {
     /* if (this.uName == "" && this.passWord=="") {
        console.log("Fill Required Field");
      } else*/
