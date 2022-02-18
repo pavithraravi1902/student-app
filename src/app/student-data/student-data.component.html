@@ -3,26 +3,24 @@
         <h1>{{heading}}</h1>
         <div class="body">
             Username:
-            <input style="background-color:purple;" type="text" name="uname" id="uname" [(ngModel)]="uName">
+            <input style="background-color:purple;" type={{typeName}} name="uname" id="uname" [(ngModel)]="uName">
             <br />
             <br />
             Password:
-            <input style="background-color:purple;" type="password" name="check" id="check" [(ngModel)]="passWord">
+            <input style="background-color:purple;" type={{typeName1}} name="check" id="check" [(ngModel)]="passWord">
             <br />
             <br />
             <button type="submit" (click)="addInfo()">Login</button>
         </div>
     </div>
 </div>
-<table style="border: 2px; background-color: grey;">
-    <tr>
-        <div *ngFor="let elt of unameContainer">
-            {{elt}}
-        </div>
-    </tr>
-    <tr>
-        <div *ngFor="let elt1 of passwordContainer">
-            {{elt1}}
-        </div>
-    </tr>
-</table>
+<tr>
+    <div *ngFor="let elt of unameContainer">
+        {{elt}}
+    </div>
+</tr>
+<tr>
+    <div *ngFor="let elt1 of passwordContainer">
+        {{elt1}}
+    </div>
+</tr>
