@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentDataComponent implements OnInit {
   public heading: string = "Student-Login";
-  public uName: string = "";
-  public passWord: string = "";
+  public uName: any = "";
+  public passWord: any = "";
   public typeName: string = "text";
   public typeName1: string = "password"
-  public unameContainer: Array<string> = [];
-  public passwordContainer: Array<string> = [];
+  public unameContainer: any = [];
+  public passwordContainer: any = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -30,5 +30,9 @@ export class StudentDataComponent implements OnInit {
     };
     this.uName = "";
     this.passWord = "";
+  }
+  editEvent(): any {
+    this.uName = this.unameContainer;
+    this.passWord = this.passwordContainer;
   }
 }

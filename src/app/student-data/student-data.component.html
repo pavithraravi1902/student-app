@@ -14,6 +14,7 @@
         </div>
     </div>
 </div>
+<table style="border:2px">
 <tr>
     <div *ngFor="let elt of unameContainer">
         {{elt}}
@@ -24,3 +25,6 @@
         {{elt1}}
     </div>
 </tr>
+<button (click)="editEvent()">Edit</button>
+<button>Delete</button>
+</table>
