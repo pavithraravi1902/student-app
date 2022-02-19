@@ -14,17 +14,27 @@
         </div>
     </div>
 </div>
-<table style="border:2px">
-<tr>
-    <div *ngFor="let elt of unameContainer">
-        {{elt}}
-    </div>
-</tr>
-<tr>
-    <div *ngFor="let elt1 of passwordContainer">
-        {{elt1}}
-    </div>
-</tr>
-<button (click)="editEvent()">Edit</button>
-<button>Delete</button>
+
+<!--<table style="border:2px">
+    <tr>
+        <div *ngFor="let elt of unameContainer">
+            {{elt}}
+        </div>
+    </tr>
+    <tr>
+        <div *ngFor="let elt1 of passwordContainer">
+            {{elt1}}
+        </div>
+    </tr>
+    <button>Edit</button>
+    <button>Delete</button>
+</table>-->
+<table style="border:1px">
+<div *ngFor="let elt of dataHolder">
+    {{elt}}
+</div>
+<div *ngFor="let elt1 of dataHolder1">
+    {{elt1}}
+</div>
+<button (click)="editData()">Edit</button>
 </table>

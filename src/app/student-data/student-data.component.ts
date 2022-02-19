@@ -1,38 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+type requiredType = {
+  username: "string"
+  password: "string"
+};
 @Component({
   selector: 'app-student-data',
   templateUrl: './student-data.component.html',
   styleUrls: ['./student-data.component.scss']
 })
 export class StudentDataComponent implements OnInit {
-  public heading: string = "Student-Login";
-  public uName: any = "";
-  public passWord: any = "";
+  public heading: Array<string> = ["Student-Login"];
+  public uName: string = "";
+  public passWord: string = "";
   public typeName: string = "text";
   public typeName1: string = "password"
-  public unameContainer: any = [];
-  public passwordContainer: any = [];
+  public dataHolder: Array<string> = [];
+  public dataHolder1: Array<string> = [];
+  public isEmpty=true;
   constructor() { }
 
   ngOnInit(): void {
   }
   addInfo(): any {
-    /* if (this.uName == "" && this.passWord=="") {
-       console.log("Fill Required Field");
-     } else*/
     if (this.uName == "") {
-      console.log("Enter Your Name");
-    } else if (this.passWord == "" && this.passWord.length <= 8) {
-      console.log("Enter Strong Password");
+      return this.uName="Enter username";
+    }
+    if (this.passWord == "" && this.passWord.length <= 8) {
+      return this.passWord="Enter Strong password";
     } else {
-      this.unameContainer.push("username:" + this.uName);
-      this.passwordContainer.push("password:" + this.passWord);
-    };
-    this.uName = "";
-    this.passWord = "";
+      this.dataHolder.push(this.uName);
+      this.dataHolder1.push(this.passWord);
+      this.uName="";
+      this.passWord="";
+    }
   }
-  editEvent(): any {
-    this.uName = this.unameContainer;
-    this.passWord = this.passwordContainer;
+  editData(){
+      return this.dataHolder.push(this.uName);
   }
 }
