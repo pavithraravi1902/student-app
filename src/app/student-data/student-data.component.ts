@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 type requiredType = {
-  id: "number"
-  name: "string"
+  id: "number",
+  username: "string",
+  password: "string"
 };
 @Component({
   selector: 'app-student-data',
@@ -24,11 +25,19 @@ export class StudentDataComponent implements OnInit {
     if (this.passWord == "") {
       alert("Enter Strong Password");
     }
-    if(this.userName != "" && this.passWord !=""){
-    this.data.push({ id: this.data.length, username: this.userName, password: this.passWord })
-    console.log(this.data);
+    if (this.userName != "" && this.passWord != "") {
+      this.data.push({ id: this.data.length, username: this.userName, password: this.passWord })
+      console.log(this.data);
     }
     this.userName = "";
     this.passWord = "";
   }
+  edit() {
+    this.userName = this.data.username;
+    this.passWord = this.data.password;
+  }
+  delete(id:number) {
+    this.data=this.data.filter((value: any)=>value.id!==id);
+  }
 }
+

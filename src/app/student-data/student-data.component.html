@@ -34,6 +34,12 @@
                     <td>
                         {{elt.password}}
                     </td>
+                    <td>
+                        <button (click)="edit()">Edit</button>
+                    </td>
+                    <td>
+                        <button (click)="delete(elt.id)" >Delete</button>
+                    </td>
                 </div>
         </tbody>
     </table>
