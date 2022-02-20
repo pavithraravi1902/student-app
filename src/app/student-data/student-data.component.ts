@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 type requiredType = {
-  username: "string"
-  password: "string"
+  id: "number"
+  name: "string"
 };
 @Component({
   selector: 'app-student-data',
@@ -9,32 +9,26 @@ type requiredType = {
   styleUrls: ['./student-data.component.scss']
 })
 export class StudentDataComponent implements OnInit {
-  public heading: Array<string> = ["Student-Login"];
-  public uName: string = "";
+  public heading: string = "Student Login";
+  public userName: string = "";
   public passWord: string = "";
-  public typeName: string = "text";
-  public typeName1: string = "password"
-  public dataHolder: Array<string> = [];
-  public dataHolder1: Array<string> = [];
-  public isEmpty=true;
+  public data: any = [];
   constructor() { }
 
   ngOnInit(): void {
   }
-  addInfo(): any {
-    if (this.uName == "") {
-      return this.uName="Enter username";
+  login() {
+    if (this.userName == "") {
+      alert("Enter Username");
     }
-    if (this.passWord == "" && this.passWord.length <= 8) {
-      return this.passWord="Enter Strong password";
-    } else {
-      this.dataHolder.push(this.uName);
-      this.dataHolder1.push(this.passWord);
-      this.uName="";
-      this.passWord="";
+    if (this.passWord == "") {
+      alert("Enter Strong Password");
     }
-  }
-  editData(){
-      return this.dataHolder.push(this.uName);
+    if(this.userName != "" && this.passWord !=""){
+    this.data.push({ id: this.data.length, username: this.userName, password: this.passWord })
+    console.log(this.data);
+    }
+    this.userName = "";
+    this.passWord = "";
   }
 }

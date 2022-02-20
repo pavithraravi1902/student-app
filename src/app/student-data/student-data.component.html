@@ -1,40 +1,39 @@
-<div style="text-align:center" class="container">
-    <div>
-        <h1>{{heading}}</h1>
-        <div class="body">
-            Username:
-            <input style="background-color:purple;" type={{typeName}} name="uname" id="uname" [(ngModel)]="uName">
-            <br />
-            <br />
-            Password:
-            <input style="background-color:purple;" type={{typeName1}} name="check" id="check" [(ngModel)]="passWord">
-            <br />
-            <br />
-            <button type="submit" (click)="addInfo()">Login</button>
+<form>
+    <div style="text-align:center" class="container">
+        <div>
+            <h1>{{heading}}</h1>
+            <div class="body">
+                Username:
+                <input type="text" name="username" #uname [(ngModel)]="userName">
+                <br />
+                <br />
+                Password:
+                <input type="password" name="password" #check [(ngModel)]="passWord">
+                <br />
+                <br />
+                <button (click)="login()">Login</button>
+            </div>
         </div>
     </div>
-</div>
-
-<!--<table style="border:2px">
-    <tr>
-        <div *ngFor="let elt of unameContainer">
-            {{elt}}
-        </div>
-    </tr>
-    <tr>
-        <div *ngFor="let elt1 of passwordContainer">
-            {{elt1}}
-        </div>
-    </tr>
-    <button>Edit</button>
-    <button>Delete</button>
-</table>-->
-<table style="border:1px">
-<div *ngFor="let elt of dataHolder">
-    {{elt}}
-</div>
-<div *ngFor="let elt1 of dataHolder1">
-    {{elt1}}
-</div>
-<button (click)="editData()">Edit</button>
-</table>
+    <table style="border:1px">
+        <thead>
+            <th>id</th>
+            <th>Username</th>
+            <th>password</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+                <div *ngFor="let elt of data">
+                    <td>
+                        {{elt.id + 1}}
+                    </td>
+                    <td>
+                        {{elt.username}}
+                    </td>
+                    <td>
+                        {{elt.password}}
+                    </td>
+                </div>
+        </tbody>
+    </table>
