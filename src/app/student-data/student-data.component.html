@@ -4,11 +4,11 @@
             <h1>{{heading}}</h1>
             <div class="body">
                 Username:
-                <input type="text" name="username" #uname [(ngModel)]="userName">
+                <input type="text" name="username" #uname [(ngModel)]="userName" autocomplete="off">
                 <br />
                 <br />
                 Password:
-                <input type="password" name="password" #check [(ngModel)]="passWord">
+                <input type="password" name="password" #check [(ngModel)]="passWord" autocomplete="off">
                 <br />
                 <br />
                 <button (click)="login()">Login</button>
@@ -24,22 +24,22 @@
             <th></th>
         </thead>
         <tbody>
-                <div *ngFor="let elt of data">
-                    <td>
-                        {{elt.id + 1}}
-                    </td>
-                    <td>
-                        {{elt.username}}
-                    </td>
-                    <td>
-                        {{elt.password}}
-                    </td>
-                    <td>
-                        <button (click)="edit()">Edit</button>
-                    </td>
-                    <td>
-                        <button (click)="delete(elt.id)" >Delete</button>
-                    </td>
-                </div>
+            <div *ngFor="let elt of data">
+                <td>
+                    {{elt.id + 1}}
+                </td>
+                <td>
+                    {{elt.username}}
+                </td>
+                <td>
+                    {{elt.password}}
+                </td>
+                <td>
+                    <button (click)="edit(elt.id)">Edit</button>
+                </td>
+                <td>
+                    <button (click)="delete(elt.id)">Delete</button>
+                </td>
+            </div>
         </tbody>
     </table>

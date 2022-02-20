@@ -27,17 +27,17 @@ export class StudentDataComponent implements OnInit {
     }
     if (this.userName != "" && this.passWord != "") {
       this.data.push({ id: this.data.length, username: this.userName, password: this.passWord })
-      console.log(this.data);
+      console.table(this.data);
     }
     this.userName = "";
     this.passWord = "";
   }
-  edit() {
-    this.userName = this.data.username;
-    this.passWord = this.data.password;
+  edit(id: number) {
+    this.userName = this.userName.replace(this.userName, this.data[id].username);
+    this.passWord = this.passWord.replace(this.passWord, this.data[id].password);
   }
-  delete(id:number) {
-    this.data=this.data.filter((value: any)=>value.id!==id);
+  delete(id: number) {
+    this.data = this.data.filter((value: any) => value.id !== id);
   }
 }
 
