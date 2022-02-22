@@ -4,14 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudentDataComponent } from './student-data/student-data.component';
-import { HomeComponent } from './home/home.component';
+import { StudentLoginComponent } from './student-login/student-login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentDataComponent,
-    HomeComponent
+    StudentLoginComponent,
   ],
   imports: [
     BrowserModule,

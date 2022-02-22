@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { StudentDataComponent } from './student-data/student-data.component';
+import { StudentLoginComponent } from './student-login/student-login.component';
 
 const routes: Routes = [
-  {
-    path: "studentData",
-    component: StudentDataComponent,
-  }];
+  {path:"student-login", component:StudentLoginComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

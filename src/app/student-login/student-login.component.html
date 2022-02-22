@@ -1,0 +1,39 @@
+<div style="text-align: center;">
+    <h1>{{title}}</h1>
+
+    <form>
+        <div>
+            <label for="username">Username:</label>
+            <input type="typeName" name="uname" #uname [(ngModel)]="uName">
+        </div>
+        <br />
+        <div>
+            <label for="password">Password:</label>
+            <input type="typeName1" name="password" #password [(ngModel)]="passWord">
+        </div>
+        <br />
+        <div>
+            <button (click)="onClick(uname.value)">Login</button>
+        </div>
+    </form>
+</div>
+<div>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>USERNAME</th>
+            <th>PASSWORD</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elt of dataHolder">
+                <td> {{elt.id}}</td>
+                <td> {{elt.username}}</td>
+                <td> {{elt.password}}</td>
+                <td><button (click)="onEdit(elt.id)">Edit</button></td>
+                <td><button (click)="onDelete(elt.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
