@@ -15,7 +15,7 @@ import { DataService } from './data.service';
     AppComponent,
     StudentLoginComponent,
     HomeComponent,
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,

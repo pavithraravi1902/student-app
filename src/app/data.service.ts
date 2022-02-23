@@ -10,9 +10,9 @@ type Syllabus = {
   subName: string,
   subCode: string,
 }
- export type Unit = {
-   unit: string,
- }
+export type Unit = {
+  unit: string,
+}
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +53,7 @@ export class DataService {
     { unit: "Methods and techniques of cost accounting" },
     { unit: "Accounting for overheads" },
   ];
+  public weekDays: Array<string> = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   constructor() { }
   getData(): any {
     return this.subjectData;
@@ -72,7 +73,10 @@ export class DataService {
   getCost() {
     return this.costAccounting;
   }
-  getSubjectData(){
+  getSubjectData() {
     return this.subjectData;
+  }
+  getWeekDays() {
+    return this.weekDays;
   }
 }

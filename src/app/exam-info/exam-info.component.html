@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+    <h1>{{title}}</h1>
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Subject</th>
+            <th>Subject Code</th>
+            <th>commodity</th>
+            <th>Timing</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let value of sub; index as i">
+                <td></td>
+                <td>{{week[i]}}</td>
+                <td>{{value.subName}}</td>
+                <td>{{value.subCode}}</td>
+                <td></td>
+                <td>{{"FN: 9:15 am to 12:15 pm"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
