@@ -72,4 +72,7 @@ export class DataService {
   getCost() {
     return this.costAccounting;
   }
+  getSubjectData(){
+    return this.subjectData;
+  }
 }
