@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-
+type Unit = {
+  unit: string
+}
 @Component({
   selector: 'app-syllabus',
   template: `
@@ -21,31 +23,31 @@ import { DataService } from '../data.service';
        <tr>
           <button (click)="algebraFn()">Syllabys</button>
           <ul *ngFor="let item of data; index as i">
-          <li> {{"unit-" + (i+1)}}  {{(item)}}</li>
+          <li> {{"Algebra: unit-" + (i+1)}}  {{(item.unit)}}</li>
           </ul>
        </tr>
        <tr>
           <button (click)="trignoFn()">Syllabys</button>
           <ul *ngFor="let item1 of data1; index as i">
-          <li> {{"unit-" + (i+1)}}  {{(item1)}}</li>
+          <li> {{"Trignometry: unit-" + (i+1)}}  {{(item1.unit)}}</li>
           </ul>
        </tr>
        <tr>
           <button (click)="diffEqfn()">Syllabys</button>
           <ul *ngFor="let item2 of data2; index as i">
-          <li> {{"unit-" + (i+1)}}  {{(item2)}}</li>
+          <li> {{"Differential Equation: unit-" + (i+1)}}  {{(item2.unit)}}</li>
           </ul>
        </tr>
         <tr>
           <button (click)="financialAccFn()">Syllabys</button>
           <ul *ngFor="let item3 of data3; index as i">
-          <li> {{"unit-" + (i+1)}}  {{(item3)}}</li>
+          <li> {{"Financial Accounting: unit-" + (i+1)}}  {{(item3.unit)}}</li>
           </ul>
         </tr>
         <tr>
           <button (click)="costFn()">Syllabys</button>
           <ul *ngFor="let item4 of data4; index as i">
-          <li> {{"unit-" + (i+1)}}  {{(item4)}}</li>
+          <li> {{"Cost Accounting: unit-" + (i+1)}}  {{(item4.unit)}}</li>
           </ul>
         </tr>
        </td>
@@ -64,11 +66,11 @@ export class SyllabusComponent implements OnInit {
   public diffEq: any = [];
   public financialAcc: any = [];
   public costAcc: any = [];
-  public data: Array<string> = [];
-  public data1: Array<string> = [];
-  public data2: Array<string> = [];
-  public data3: Array<string> = [];
-  public data4: Array<string> = [];
+  public data: Array<Unit> = [];
+  public data1: Array<Unit> = [];
+  public data2: Array<Unit> = [];
+  public data3: Array<Unit> = [];
+  public data4: Array<Unit> = [];
   constructor(private dataServie: DataService) { }
   ngOnInit(): void {
     this.subjectData = this.dataServie.getData()
@@ -80,26 +82,23 @@ export class SyllabusComponent implements OnInit {
   }
   algebraFn() {
     "Algebra syllabus:"
-    this.data = this.algebra.filter((item: any) => Object.values(item));
-    //this.data = Object.values(this.algebra)
-    console.log(this.data)
-    return this.data;
+    this.data = this.algebra.filter((item: any) => item.unit);
   }
 
   trignoFn() {
-    this.data1=this.trigno.filter((item:any)=>item);
+    this.data1 = this.trigno.filter((item: any) => item.unit);
   }
 
   diffEqfn() {
-    this.data2
+    this.data2 = this.diffEq.filter((item: any) => item.unit);
   }
 
   financialAccFn() {
-    this.data3
+    this.data3 = this.financialAcc.filter((item: any) => item.unit);
   }
 
   costFn() {
-    this.data4
+    this.data4 = this.costAcc.filter((item: any) => item.unit);
   }
 }
 

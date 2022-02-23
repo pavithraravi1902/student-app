@@ -10,6 +10,9 @@ type Syllabus = {
   subName: string,
   subCode: string,
 }
+ export type Unit = {
+   unit: string,
+ }
 
 @Injectable({
   providedIn: 'root'
@@ -25,30 +28,30 @@ export class DataService {
     { subName: "Differential Equation", subCode: "TAM3A" },
     { subName: "Financial Accounting", subCode: "SPAM1" },
     { subName: "Cost Accounting", subCode: "SPAM2" }];
-  public algebra: any = [
-    { unit1: "Abelian, non-abelian group" },
-    { unit2: "Rings" },
-    { unit3: "Cyclic, non-cyclic subgroup" },
+  public algebra: Array<Unit> = [
+    { unit: "Abelian, non-abelian group" },
+    { unit: "Rings" },
+    { unit: "Cyclic, non-cyclic subgroup" },
   ];
-  public trignometry: any = [
-    { unit1: "Expansion of sin theta, cos theta" },
-    { unit2: "power of cos theta, sin theta" },
-    { unit3: "Hyperbolic Function" },
+  public trignometry: Array<Unit> = [
+    { unit: "Expansion of sin theta, cos theta" },
+    { unit: "power of cos theta, sin theta" },
+    { unit: "Hyperbolic Function" },
   ];
-  public differentialEquation: any = [
-    { unit1: "Characteristics Equation" },
-    { unit2: "Laplase Function" },
-    { unit3: "Fourier series" },
+  public differentialEquation: Array<Unit> = [
+    { unit: "Characteristics Equation" },
+    { unit: "Laplase Function" },
+    { unit: "Fourier series" },
   ];
-  public financialAccounting: any = [
-    { unit1: "Final Accounts" },
-    { unit2: "Depreciation" },
-    { unit3: "Partnership" },
+  public financialAccounting: Array<Unit> = [
+    { unit: "Final Accounts" },
+    { unit: "Depreciation" },
+    { unit: "Partnership" },
   ];
-  public costAccounting: any = [
-    { unit1: "Fundamental of cost accounting" },
-    { unit2: "Methods and techniques of cost accounting" },
-    { unit3: "Accounting for overheads" },
+  public costAccounting: Array<Unit> = [
+    { unit: "Fundamental of cost accounting" },
+    { unit: "Methods and techniques of cost accounting" },
+    { unit: "Accounting for overheads" },
   ];
   constructor() { }
   getData(): any {
