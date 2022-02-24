@@ -11,11 +11,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let value of sub; index as i">
-                <td></td>
+                <td>{{myDate | date}}</td>
                 <td>{{week[i]}}</td>
                 <td>{{value.subName}}</td>
                 <td>{{value.subCode}}</td>
-                <td></td>
+                <td>{{"Major"}}</td>
                 <td>{{"FN: 9:15 am to 12:15 pm"}}</td>
             </tr>
         </tbody>

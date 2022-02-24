@@ -1,25 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SyllabusComponent } from './syllabus.component';
+let fixture: ComponentFixture<SyllabusComponent>;
 
-describe('SyllabusComponent', () => {
-  let component: SyllabusComponent;
-  let fixture: ComponentFixture<SyllabusComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SyllabusComponent ]
-    })
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [SyllabusComponent]
+  })
     .compileComponents();
-  });
+});
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SyllabusComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+beforeEach(() => {
+  fixture = TestBed.createComponent(SyllabusComponent);
+  component = fixture.componentInstance;
+  fixture.detectChanges();
+});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+it('should create', () => {
+  expect(component).toBeTruthy();
+});
 });

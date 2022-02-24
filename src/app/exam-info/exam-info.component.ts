@@ -15,6 +15,8 @@ export class ExamInfoComponent implements OnInit {
   public major: any = ["Algebra", "Trignometry", "Differential Equation"];
   public allied: any = ["Financial Accounting", "Cost Accounting"];
   public week: Array<string> = [];
+  public data: any = [];
+  public myDate: any=Date.now();
   public booleanVal: boolean = this.commodity();
   constructor(private dataService: DataService) { }
 
@@ -23,16 +25,19 @@ export class ExamInfoComponent implements OnInit {
     this.week = this.dataService.getWeekDays();
   }
   commodity(): any {
-    if (this.sub.filter((value) => value.subName == "Alegbra")) {
-      return this.booleanVal = true;
-    } else if (this.sub.filter((value) => value.subName == "Trignometry")) {
-      return this.booleanVal = true;
-    } else if (this.sub.filter((value) => value.subName == "Differential Equation")) {
-      return this.booleanVal = true;
-    } else if (this.sub.filter((value) => value.subName == "Financial Accounting")) {
-      return this.booleanVal = false;
-    } else if (this.sub.filter((value) => value.subName == "Cost Accounting")) {
-      return this.booleanVal = false;
+    /*if(this.data=this.sub.filter((value)=>this.major.includes(value))){
+      this.booleanVal=true;
+    }else{
+      this.booleanVal=false;
+    }*/
+    for (let i = 0; i < this.sub.length; i++) {
+      for (let j = 0; j < this.major.length; j++) {
+        if (this.sub[i] == this.major[j]) {
+          return this.booleanVal = true;
+        } else {
+          return this.booleanVal = false;
+        }
+      }
     }
   }
 }
