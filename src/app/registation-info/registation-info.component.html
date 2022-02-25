@@ -1,0 +1,131 @@
+<h1>{{title}}</h1>
+<form>
+    <div>
+        <div>
+            Firstname:
+            <input type="typeName" id="firstname" name="fname" [(ngModel)]=fName>
+        <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            Middlename:
+            <input type="typeName" id="middlename" name="mname" [(ngModel)]=mName>
+            <div [style.color]="'blue'">{{validate1}}</div>
+        </div>
+        <br />
+        <div>
+            Lastname:
+            <input type="typeName" id="lastname" name="lname" [(ngModel)]=lName>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            Fathername:
+            <input type="typeName" id="fathername" name="aname" [(ngModel)]=aName>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            DOB:
+            <input type="date" id="dob" name="dob" [(ngModel)]=dateOfBirth>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            Gender:
+            <input type="radio" id="gender" name="gender" value="Female" [(ngModel)]=gender>Female
+            <input type="radio" id="gender" name="gender" value="male" [(ngModel)]=gender>Male
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            Email ID:
+            <input type="email" id="eMail" name="eMail" [(ngModel)]=email>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            Mobile Number:
+            <input type="tel" id="mobNum" name="mobNum" [(ngModel)]=num>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            Address:
+            <input type="typeName" id="address" name="address" [(ngModel)]=info>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            Country:
+            <select id="nation" name="nation" [(ngModel)]=country>
+                <option *ngFor="let country of countryName">
+                    {{country.countryName}}
+                </option>
+            </select>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            State:
+            <select id="state" name="state" [(ngModel)]=stateDiv>
+                <option *ngFor="let state of stateName">
+                    {{state.stateName}}
+                </option>
+            </select>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            District:
+            <select id="district" name="district" [(ngModel)]=districtDiv>
+                <option *ngFor="let district of districtName">
+                    {{district.districtName}}
+                </option>
+            </select>
+            <div [style.color]="'red'">{{validate}}</div>
+        </div>
+        <br />
+        <div>
+            <button type="submit" (click)="onClick()">Submit</button>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>Firstname</th>
+                <th>Middlename</th>
+                <th>Lastname</th>
+                <th>Fathername</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Email ID</th>
+                <th>Mobile Number</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>District</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

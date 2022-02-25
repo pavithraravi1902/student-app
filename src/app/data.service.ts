@@ -13,6 +13,17 @@ type Syllabus = {
 export type Unit = {
   unit: string,
 }
+export type Country = {
+  countryName: string,
+}
+
+export type State = {
+  stateName: string,
+}
+
+export type District = {
+  districtName: string,
+}
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +65,48 @@ export class DataService {
     { unit: "Accounting for overheads" },
   ];
   public weekDays: Array<string> = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  public countryNames: Array<Country> = [
+    { countryName: "India" },
+    { countryName: "America" },
+    { countryName: "china" },
+    { countryName: "Russia" },
+    { countryName: "England" },
+    { countryName: "Canada" },
+    { countryName: "Germany" },
+    { countryName: "Brazil" },
+    { countryName: "Japan" },
+    { countryName: "Australia" },
+    { countryName: "UAE" }
+  ];
+  public stateName: Array<State> = [
+    { stateName: "Tamilnadu" },
+    { stateName: "Kerala" },
+    { stateName: "Gujarat" },
+    { stateName: "Bihar" },
+    { stateName: "Uttar Pradhesh" },
+    { stateName: "Maharastra" },
+    { stateName: "Madhyapradesh" },
+    { stateName: "Andhrapradesh" },
+    { stateName: "Punjab" },
+    { stateName: "Haryana" },
+    { stateName: "Rajasthan" },
+    { stateName: "Jammu & Kashmir" }];
+    public districtName: Array<District> = [
+      {districtName: "Chennai"},
+      {districtName: "Coimbatore"},
+      {districtName: "Madurai"},
+      {districtName: "Trichy"},
+      {districtName: "Kancheepuram"},
+      {districtName: "Tiruvallur"},
+      {districtName: "Tirupur"},
+      {districtName: "Erode"},
+      {districtName: "Nilgris"},
+      {districtName: "Vilupuram"},
+      {districtName: "Vellore"},
+      {districtName: "Ranipet"},
+      {districtName: "Chengalpet"},
+      {districtName: "Ariyalur"}
+    ];
   constructor() { }
   getData(): any {
     return this.subjectData;
@@ -78,5 +131,14 @@ export class DataService {
   }
   getWeekDays() {
     return this.weekDays;
+  }
+  getCountryNames() {
+    return this.countryNames;
+  }
+  getStateNames() {
+    return this.stateName;
+  }
+  getDistrictNames() {
+    return this.districtName;
   }
 }
