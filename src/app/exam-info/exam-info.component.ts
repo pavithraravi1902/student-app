@@ -13,10 +13,10 @@ export class ExamInfoComponent implements OnInit {
   public title: string = "April 2022 Examination Time Table"
   public sub: Array<Syllabus> = [];
   public major: any = ["Algebra", "Trignometry", "Differential Equation"];
-  public allied: any = ["Financial Accounting", "Cost Accounting"];
+  public allied: Array<string> = ["Financial Accounting", "Cost Accounting"];
   public week: Array<string> = [];
   public data: any = [];
-  public myDate: any=Date.now();
+  public myDate: any = Date.now();
   public booleanVal: boolean = this.commodity();
   constructor(private dataService: DataService) { }
 

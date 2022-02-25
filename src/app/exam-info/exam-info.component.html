@@ -11,11 +11,16 @@
         </thead>
         <tbody>
             <tr *ngFor="let value of sub; index as i">
-                <td>{{myDate | date}}</td>
+                <td>{{myDate | date}} </td>
                 <td>{{week[i]}}</td>
                 <td>{{value.subName}}</td>
                 <td>{{value.subCode}}</td>
-                <td>{{"Major"}}</td>
+                <td>
+                    <p *ngIf="booleanVal; else elseBlock">Major</p>
+                    <ng-template #elseBlock>
+                        <p>Allied</p>
+                    </ng-template>
+                </td>
                 <td>{{"FN: 9:15 am to 12:15 pm"}}</td>
             </tr>
         </tbody>
