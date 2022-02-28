@@ -1,0 +1,34 @@
+<p>list works!</p>
+
+<!-- {{ studentInfo | json }} -->
+<button routerLink="/students/new">Add Student</button>
+<table>
+    <thead>
+        <th>
+            Reg. No.
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            Action
+        </th>
+    </thead>
+    <tr *ngFor="let student of studentInfo">
+        <td>{{ student.regNo }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.dept }}</td>
+        <td>
+            <button (click)="onEdit(student)">
+                Edit
+            </button>
+        </td>
+    </tr>
+</table>

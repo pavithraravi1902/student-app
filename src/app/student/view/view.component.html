@@ -1,0 +1,12 @@
+<p>Student No: {{ routeParameter }}</p>
+<div>
+    <label>Name</label>: {{ student.name }} <br/>
+    <label>Age</label>: {{ student.age }} <br/>
+    <label>Department</label>: {{ student.dept }} <br/>
+</div>
+<button routerLink="/students">
+    back
+</button>
+<button (click)="onDelete()">
+    delete
+</button>
