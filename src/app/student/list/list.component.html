@@ -20,7 +20,7 @@
             Action
         </th>
     </thead>
-    <tr *ngFor="let student of studentInfo">
+    <tr *ngFor="let student of studentInfo | async">
         <td>{{ student.regNo }}</td>
         <td>{{ student.name }}</td>
         <td>{{ student.age }}</td>

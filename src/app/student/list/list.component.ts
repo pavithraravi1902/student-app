@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Student, StudentService } from '../services/student.service';
 
 @Component({
@@ -9,14 +10,16 @@ import { Student, StudentService } from '../services/student.service';
 })
 export class ListComponent implements OnInit {
 
-  studentInfo: Student[] = [];
-  constructor(private student: StudentService, private router: Router) { }
+  studentInfo: Observable<Array<Student>>;
+  
+  constructor(private student: StudentService, private router: Router) { 
+    this.studentInfo  = this.student.getAllStudents();
+  }
 
   ngOnInit(): void {
-    this.studentInfo = this.student.Students;
   }
 
   onEdit(student: Student): void {
-    this.router.navigate(["students", student.regNo ]);
+    this.router.navigate(["students", student.id ]);
   }
 }

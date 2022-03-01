@@ -10,19 +10,22 @@ import { Student, StudentService } from '../services/student.service';
 export class ViewComponent implements OnInit {
 
   routeParameter;
-  student: Student;
+  student: Student = {} as Student;
 
   constructor(private route: ActivatedRoute, private router: Router, private studentService: StudentService) {
     this.routeParameter =  Number(this.route.snapshot.paramMap.get("id"));
-    this.student = this.studentService.Students.find((s) => s.regNo === this.routeParameter) || {} as Student;
    }
 
   ngOnInit(): void {
-    
+    this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
+      this.student = response;
+    });
   }
 
   onDelete(): void {
-    this.studentService.Students.splice(this.studentService.Students.findIndex((s) => s.regNo === this.routeParameter), 1)
-    this.router.navigate(["students"]);
+    this.studentService.removeStudentById(this.routeParameter).subscribe(() => {
+      alert("Deleted suvccessfully!");
+      this.router.navigate(["students"]);
+    });
   }
 }
