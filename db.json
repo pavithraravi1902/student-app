@@ -1,0 +1,49 @@
+{
+  "jokes": [
+    {
+      "title": "Test Joke",
+      "text": "Joke of the year!!!",
+      "id": 1
+    },
+    {
+      "title": "Second Joke",
+      "id": 2,
+      "text": "Second joke content"
+    },
+    {
+      "title": "Test Joke",
+      "text": "Joke of the year!!!",
+      "id": 3
+    }
+  ],
+  "students": [
+    {
+      "name": "yamunaravi",
+      "age": "20",
+      "dept": "BBA",
+      "regNo": "2",
+      "id": 2
+    },
+    {
+      "name": "pavithra",
+      "age": "22",
+      "dept": "M.sc",
+      "regNo": "1",
+      "id": 7
+    },
+    {
+      "name": "pavishree",
+      "age": 22,
+      "dept": "B.sc",
+      "regNo": 1,
+      "id": 8
+    },
+    {
+      "regNo": 4,
+      "name": "Sathish",
+      "age": 33,
+      "dept": "IT",
+      "id": 9
+    }
+  ]
+}

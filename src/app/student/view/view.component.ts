@@ -23,8 +23,9 @@ export class ViewComponent implements OnInit {
   }
 
   onDelete(): void {
+    alert("Are you sure to delete this data?");
     this.studentService.removeStudentById(this.routeParameter).subscribe(() => {
-      alert("Deleted suvccessfully!");
+      alert("Deleted successfully!");
       this.router.navigate(["students"]);
     });
   }

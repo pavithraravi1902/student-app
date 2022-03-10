@@ -25,14 +25,19 @@ export class StudentService {
     return this.http.get<Student>(`http://localhost:3000/students/${id}`, {});
   }
 
-  public removeStudentById(id: number) {
+  public removeStudentById(id: number): Observable<any> {
     return this.http.delete(`http://localhost:3000/students/${id}`, {});
+  }
+
+  public createData(data:any): Observable<any> {
+    return this.http.post(`http://localhost:3000/students`, data);
+  }
+
+  public updateStudent(id: number, data:any): Observable<any> {
+    return this.http.put(`http://localhost:3000/students/${id}`, data);
   }
 
   // to-do
   // Update using PUT / PATCH(need not to consider by now)
   
-  public addStudent(student: Student) {
-    // Create using POST
-  }
 }

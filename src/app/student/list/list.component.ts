@@ -11,15 +11,25 @@ import { Student, StudentService } from '../services/student.service';
 export class ListComponent implements OnInit {
 
   studentInfo: Observable<Array<Student>>;
-  
-  constructor(private student: StudentService, private router: Router) { 
-    this.studentInfo  = this.student.getAllStudents();
+
+  constructor(private student: StudentService, private router: Router) {
+    this.studentInfo = this.student.getAllStudents();
   }
 
   ngOnInit(): void {
   }
 
   onEdit(student: Student): void {
-    this.router.navigate(["students", student.id ]);
+    // this.router.navigate(["students", student.id, "edit"]);
+    this.router.navigateByUrl(`students/${student.id}/edit`);
+    // this.router.navigateByUrl("students/" + student.id + "/edit");
   }
+
+  onView(student: Student): void {
+     this.router.navigate(["students", student.id, "view"]);
+  }
+
+  onAdd(student: Student): void {
+    this.router.navigate(["students", student]);
+ }
 }

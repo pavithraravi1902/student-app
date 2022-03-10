@@ -1,1 +1,34 @@
 <p>form works!</p>
+<p>Student No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
+<div>
+    <div>
+        <label>RegNo</label>:<input type="number" [(ngModel)]="student.regNo" required #sreg="ngModel">
+        <div *ngIf="sreg.touched && sreg.invalid">
+            regNo required.
+        </div>
+        <br />
+        <label>Name</label>:<input type="text" [(ngModel)]="student.name" required #sname="ngModel">
+        <div *ngIf="sname.touched && sname.invalid">
+            name required.
+        </div>
+        <br />
+
+        <label>Age</label>:<input type="number" [(ngModel)]="student.age" required #sage="ngModel">
+        <div *ngIf="sage.touched && sage.invalid">
+            age required.
+        </div>
+        <br />
+        <label>Department</label>:<input type="text" [(ngModel)]="student.dept" required #sdept="ngModel">
+        <div *ngIf="sdept.touched && sdept.invalid">
+            dept required.
+        </div>
+        <br />
+    </div>
+    <div>
+        <button routerLink="/students">
+            Cancel
+        </button>
+        <button routerLink="/students" type="submit" (click)="save()" id="">{{ RouteParameter > 0 ? 'Update' : 'Create'}}
+        </button>
+    </div>
+</div>

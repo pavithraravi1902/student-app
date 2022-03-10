@@ -1,7 +1,7 @@
 <p>list works!</p>
 
 <!-- {{ studentInfo | json }} -->
-<button routerLink="/students/new">Add Student</button>
+<button routerLink="/students/add">Add Student</button>
 <table>
     <thead>
         <th>
@@ -26,6 +26,18 @@
         <td>{{ student.age }}</td>
         <td>{{ student.dept }}</td>
         <td>
+            <!-- <button routerLink="/students/{{student.id}}/view">
+                View
+            </button> -->
+            <!-- <button [routerLink]="['/students/' + student.id + '/view']">
+                View
+            </button> -->
+            <button [routerLink]="['/students', student.id, 'view']">
+                View
+            </button>
+            <!-- <button [routerLink]="'/students/' + student.id + '/view'">
+                View
+            </button> -->
             <button (click)="onEdit(student)">
                 Edit
             </button>
