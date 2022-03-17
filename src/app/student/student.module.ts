@@ -5,19 +5,23 @@ import { ViewComponent } from './view/view.component';
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
-
+import { StudentFilterPipe } from '../name.pipe';
 
 
 @NgModule({
   declarations: [
     ListComponent,
     ViewComponent,
-    FormComponent
+    FormComponent,
+    StudentFilterPipe
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-  ]
+    
+  ],providers: [],
+ 
+  
 })
 export class StudentModule { }

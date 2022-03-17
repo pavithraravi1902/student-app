@@ -1,26 +1,31 @@
 <p>list works!</p>
+<div>
+<input type="text" name="search" [(ngModel)]="nameFilter" placeholder="search by name">
+<!--{{ studentInfo | studentFilter: "1" | json }}-->
 
-<!-- {{ studentInfo | json }} -->
+</div>
 <button routerLink="/students/add">Add Student</button>
 <table>
-    <thead>
-        <th>
-            Reg. No.
-        </th>
-        <th>
-            Name
-        </th>
-        <th>
-            Age
-        </th>
-        <th>
-            Department
-        </th>
-        <th>
-            Action
-        </th>
-    </thead>
-    <tr *ngFor="let student of studentInfo | async">
+    <tr>
+        <td>
+            <thead>
+                <th (click)="sortData()">
+                    Reg. No.
+                </th >
+                <th (click)="sortName()">
+                    Name
+                </th>
+                <th (click)="sortAge()">
+                    Age
+                </th>
+                <th (click)="sortDept()">
+                    Department
+                </th>
+                <th>
+                    Action
+                </th>
+            </thead>
+    <tr *ngFor="let student of (studentInfo | studentFilter: nameFilter )">
         <td>{{ student.regNo }}</td>
         <td>{{ student.name }}</td>
         <td>{{ student.age }}</td>

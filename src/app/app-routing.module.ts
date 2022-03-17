@@ -13,7 +13,8 @@ const routes: Routes = [
   },
   {
     path: "students/add",
-    component: FormComponent
+    component: FormComponent,
+    canDeactivate: [UnsavedGuard]
   },
   {
     path: "students/:id/edit",

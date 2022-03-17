@@ -18,32 +18,25 @@
   ],
   "students": [
     {
-      "name": "yamunaravi",
-      "age": "20",
-      "dept": "BBA",
-      "regNo": "2",
+      "regNo": 1,
+      "name": "Pavithraravi",
+      "age": 21,
+      "dept": "B.sc",
+      "id": 1
+    },
+    {
+      "regNo": 1,
+      "name": "yamuna",
+      "age": 21,
+      "dept": "bba",
       "id": 2
     },
     {
-      "name": "pavithra",
-      "age": "22",
-      "dept": "M.sc",
-      "regNo": "1",
-      "id": 7
-    },
-    {
-      "name": "pavishree",
-      "age": 22,
-      "dept": "B.sc",
       "regNo": 1,
-      "id": 8
-    },
-    {
-      "regNo": 4,
-      "name": "Sathish",
-      "age": 33,
-      "dept": "IT",
-      "id": 9
+      "name": "Pavi",
+      "age": 21,
+      "dept": "B.sc",
+      "id": 3
     }
   ]
 }

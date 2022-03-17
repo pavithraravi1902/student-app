@@ -11,6 +11,7 @@ export class ViewComponent implements OnInit {
 
   routeParameter;
   student: Student = {} as Student;
+  
 
   constructor(private route: ActivatedRoute, private router: Router, private studentService: StudentService) {
     this.routeParameter =  Number(this.route.snapshot.paramMap.get("id"));
