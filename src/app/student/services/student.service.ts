@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators'
 
 export type Student = {
   regNo: number;
@@ -41,21 +40,4 @@ export class StudentService {
   public getElementByregNo(regNo: number) {
     return this.http.get<any>(`http://localhost:3000/students?regNo=${regNo}`);
   }
-
-  public getStudents() {
-    return this.http.get<any>(`http://localhost:3000/students`).pipe(
-      map((user: any) => {
-        const newReg = [];
-        for (let register of user) {
-          const regNo = register.regNo;
-          newReg.push({ regNo: regNo });
-        }
-        return newReg;
-      }),
-      //tap((reg) => console.log(reg))
-    )
-  }
-  // to-do
-  // Update using PUT / PATCH(need not to consider by now)
-
-}
+ }

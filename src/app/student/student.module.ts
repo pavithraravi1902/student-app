@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { StudentFilterPipe } from '../name.pipe';
-
+import { SortPipe } from '../sort.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { StudentFilterPipe } from '../name.pipe';
     CommonModule,
     RouterModule,
     FormsModule,
+    NgxPaginationModule
     
   ],providers: [],
  

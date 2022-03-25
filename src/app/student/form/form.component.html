@@ -1,38 +1,42 @@
 <p>form works!</p>
 <p>Student No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
 <div>
-    <div >
-        <label >RegNo</label>:<input type="number" (keyup)="touchEvent(sreg)" (change)="validateReg()" [(ngModel)]="student.regNo" required #sreg="ngModel" touched>
-        <div *ngIf="sreg.touched && sreg.invalid">
+    <div>
+        <label>RegNo</label>:<input type="number" [disabled]="isDisable" (change)="isDirty=true" (blur)="validateReg()" (click)="disablefn()"
+            [(ngModel)]="student.regNo" required #sreg="ngModel">
+        <div *ngIf="sreg.invalid && sreg.touched">
             Register Number required.
         </div>
-        <div *ngIf="sreg.touched && validate">
+        <div *ngIf="ValidRegNo">
             Register Number invalid.
         </div>
         <br />
-        <label>Name</label>:<input type="text" (keyup)="touchEvent(sname)" [(ngModel)]="student.name" required  #sname="ngModel">
+        <div *ngIf="routeParameter"></div>
+        <label>Name</label>:<input type="text" (change)="isDirty=true" [(ngModel)]="student.name" required
+            #sname="ngModel">
         <div *ngIf="sname.touched && sname.invalid">
             Name required.
         </div>
         <br />
-        <label>Age</label>:<input type="number" (keyup)="touchEvent(sage)" [(ngModel)]="student.age" required #sage="ngModel">
+        <label>Age</label>:<input type="number" (change)="isDirty=true" [(ngModel)]="student.age" required
+            #sage="ngModel">
         <div *ngIf="sage.touched && sage.invalid">
             age required.
         </div>
         <br />
-        <label>Department</label>:<input type="text" (keyup)="touchEvent(sdept)" [(ngModel)]="student.dept" required #sdept="ngModel">
+        <label>Department</label>:<input type="text" (change)="isDirty=true" [(ngModel)]="student.dept" required
+            #sdept="ngModel">
         <div *ngIf="sdept.touched && sdept.invalid">
             dept required.
         </div>
         <br />
-    <div>
-        <button (click)="onCancel()" >
-            Cancel
-        </button >
+        <div>
+            <button routerLink="/students" routerLinkActive="router-link-active">
+                Cancel
+            </button>
+        </div>
+        <div>
+            <button type="submit" (click)="save(); isDirty=false" id="">{{ RouteParameter > 0? 'Update' : 'Create' }}
+            </button>
+        </div>
     </div>
-    <div>
-        <button type="submit" (click)="save()" id="">{{ RouteParameter > 0? 'Update'  : 'Create' }}
-        </button>
-        {{confirmation}}{{confirmation1}}
-    </div>
-</div>

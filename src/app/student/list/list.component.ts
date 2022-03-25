@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { Observable } from 'rxjs';
+import { CanDeactivate, Router } from '@angular/router';
 import { Student, StudentService } from '../services/student.service';
 
 @Component({
@@ -12,14 +10,16 @@ import { Student, StudentService } from '../services/student.service';
 export class ListComponent implements OnInit {
 
   studentInfo: Array<Student> = [];
-  record: any;
-  record1: any;
+  totalRecords:any;
+  limit:any =5;
+  page: any =1;
   arrange: any;
-  nameFilter: string="";
+  nameFilter: string = "";
 
   constructor(private student: StudentService, private router: Router) {
     this.student.getAllStudents().subscribe((result) => {
       this.studentInfo = result;
+      this.totalRecords = this.studentInfo.length;
     });
   }
 
@@ -69,17 +69,18 @@ export class ListComponent implements OnInit {
     this.arrange = !this.arrange;
   }
   sortDept() {
-    if(this.arrange){
-    this.studentInfo.sort(function (a: any, b: any) {
-      let x = a.dept.toLowerCase(), y = b.dept.toLowerCase();
-      return x < y ? -1 : x > y ? 1 : 0;
-    });
-  }else{
-    this.studentInfo.sort(function (a: any, b: any) {
-      let x = a.dept.toLowerCase(), y = b.dept.toLowerCase();
-      return x < y ? 1 : x > y ? -1 : 0;
-    });
-  }
-  this.arrange = !this.arrange;
+
+    if (this.arrange) {
+      this.studentInfo.sort(function (a: any, b: any) {
+        let x = a.dept.toLowerCase(), y = b.dept.toLowerCase();
+        return x < y ? -1 : x > y ? 1 : 0;
+      });
+    } else {
+      this.studentInfo.sort(function (a: any, b: any) {
+        let x = a.dept.toLowerCase(), y = b.dept.toLowerCase();
+        return x < y ? 1 : x > y ? -1 : 0;
+      });
+    }
+    this.arrange = !this.arrange;
   }
 }

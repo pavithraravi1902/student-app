@@ -1,17 +1,15 @@
 <p>list works!</p>
 <div>
-<input type="text" name="search" [(ngModel)]="nameFilter" placeholder="search by name">
-<!--{{ studentInfo | studentFilter: "1" | json }}-->
-
+    <input type="text" name="search" [(ngModel)]="nameFilter" placeholder="search by name">
 </div>
 <button routerLink="/students/add">Add Student</button>
 <table>
     <tr>
         <td>
             <thead>
-                <th (click)="sortData()">
+                <th (click)="sortData()" >
                     Reg. No.
-                </th >
+                </th>
                 <th (click)="sortName()">
                     Name
                 </th>
@@ -25,7 +23,8 @@
                     Action
                 </th>
             </thead>
-    <tr *ngFor="let student of (studentInfo | studentFilter: nameFilter )">
+    <tr *ngFor="let student of (studentInfo | studentFilter: nameFilter | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords})">
+        <!-- -->
         <td>{{ student.regNo }}</td>
         <td>{{ student.name }}</td>
         <td>{{ student.age }}</td>
@@ -48,4 +47,11 @@
             </button>
         </td>
     </tr>
+    <pagination-controls id="list" (pageChange)="page = $event"></pagination-controls>
+   <select [(ngModel)]="limit">
+       <option value="5">5</option>
+       <option value="10">10</option>
+       <option value="25">25</option>
+       <option value="50">50</option>
+   </select>
 </table>
