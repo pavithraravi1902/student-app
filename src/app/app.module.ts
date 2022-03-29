@@ -4,12 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentModule } from './student/student.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { UniqueRegnoDirective } from './unique-regno.directive';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule} from 'ngx-pagination';
-
+import { AppInterceptor } from './app.interceptor';
+import { TeacherModule } from './teacher/teacher.module';
 //import { SortPipe } from './sort.pipe';
 
 @NgModule({
@@ -26,9 +27,16 @@ import { NgxPaginationModule} from 'ngx-pagination';
     HttpClientModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TeacherModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

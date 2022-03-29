@@ -8,22 +8,23 @@ import { FormsModule } from '@angular/forms';
 import { StudentFilterPipe } from '../name.pipe';
 import { SortPipe } from '../sort.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ItemPopoverComponent } from './item-popover/item-popover.component';
 
 @NgModule({
   declarations: [
     ListComponent,
     ViewComponent,
     FormComponent,
-    StudentFilterPipe
+    StudentFilterPipe,
+    ItemPopoverComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
     NgxPaginationModule
-    
-  ],providers: [],
- 
-  
+
+  ], providers: [],
+
 })
 export class StudentModule { }

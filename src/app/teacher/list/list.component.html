@@ -1,0 +1,38 @@
+<p>list works!</p>
+
+<button routerLink="/teachers/add">Add Student</button>
+<table>
+    <tr>
+        <td>
+            <thead>
+                <th >
+                    Reg. No.
+                </th>
+                <th >
+                    Name
+                </th>
+                <th >
+                    Age
+                </th> 
+                <th >
+                    Department
+                </th>
+                <th>
+                    Action
+                </th>
+            </thead>
+    <tr *ngFor="let teacher of teacherInfo">
+        <td>{{ teacher.regNo }}</td>
+        <td>{{ teacher.name }}</td>
+        <td>{{ teacher.age }}</td>
+        <td>{{ teacher.dept }}</td>
+        <td>
+            <button (click)="onView(teacher)" >
+                View
+            </button>
+            <button (click)="onEdit(teacher)">
+                Edit
+            </button>
+        </td>
+    </tr>
+</table>

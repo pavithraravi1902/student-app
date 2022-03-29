@@ -18,7 +18,11 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   public getAllStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>("http://localhost:3000/students", {});
+    return this.http.get<Student[]>("http://localhost:3000/students", {
+      headers: {
+        "x-client-key": "student-listing"
+      }
+    });
   }
 
   public getStudentById(id: number): Observable<Student> {

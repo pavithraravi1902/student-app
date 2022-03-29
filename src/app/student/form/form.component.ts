@@ -4,7 +4,7 @@ import { ComponentCanDeactivate } from 'src/app/component-can-deactivate';
 import { Student, StudentService } from '../services/student.service';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-student-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })

@@ -13,12 +13,13 @@
                 <th (click)="sortName()">
                     Name
                 </th>
-                <th (click)="sortAge()">
+                <!-- <th (click)="sortAge()">
                     Age
-                </th>
+                </th> -->
                 <th (click)="sortDept()">
                     Department
                 </th>
+                <th>More...</th>
                 <th>
                     Action
                 </th>
@@ -27,8 +28,11 @@
         <!-- -->
         <td>{{ student.regNo }}</td>
         <td>{{ student.name }}</td>
-        <td>{{ student.age }}</td>
+        <!-- <td>{{ student.age }}</td> -->
         <td>{{ student.dept }}</td>
+        <td>
+            <app-item-popover [data]="student"></app-item-popover>
+        </td>
         <td>
             <!-- <button routerLink="/students/{{student.id}}/view">
                 View
