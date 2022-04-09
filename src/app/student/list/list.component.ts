@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CanDeactivate, Router } from '@angular/router';
 import { Student, StudentService } from '../services/student.service';
 
+
 @Component({
-  selector: 'app-list' ,
+  selector: 'app-student-list' ,
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
@@ -11,7 +12,7 @@ export class ListComponent implements OnInit {
 
   studentInfo: Array<Student> = [];
   totalRecords: any;
-  limit: any = 5;
+  limit: any;
   page: any = 1;
   arrange: any;
   nameFilter: string = "";

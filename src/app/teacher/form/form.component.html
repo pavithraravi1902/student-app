@@ -1,1 +1,21 @@
 <p>form works!</p>
+<p>Teacher No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
+{{ teacherForm.value | json }}
+<form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <label>Name</label>:
+    <input type="text"  formControlName="name" />
+    <span *ngIf="teacherForm.touched && teacherForm.controls['name']?.errors?.['required']">Teacher name required</span>
+    <br />
+    <label>Age</label>:
+    <input type="number" formControlName="age" />
+    <span *ngIf="teacherForm.touched && teacherForm.controls['age']?.errors?.['required']">Teacher age required</span>
+    <br />
+    <label>Department</label>:
+    <input type="text" formControlName="dept" />
+    <span *ngIf="teacherForm.touched && teacherForm.controls['dept']?.errors?.['required']">Teacher Department required</span>
+    <br />
+    <div>
+        <button routerLink="/teachers">Cancel</button>
+        <button [disabled]="teacherForm.invalid" type="submit" id="">Submit</button>
+    </div>
+</form>

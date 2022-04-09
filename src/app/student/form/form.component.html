@@ -24,11 +24,11 @@
             age required.
         </div>
         <br />
-        <label>Department</label>:<input type="text" (change)="isDirty=true" [(ngModel)]="student.dept" required
+        <label>Department</label>:<input type="text" ng-mouseover="showData()" (change)="isDirty=true" [(ngModel)]="student.dept" required
             #sdept="ngModel">
         <div *ngIf="sdept.touched && sdept.invalid">
             dept required.
-        </div>
+        </div> 
         <br />
         <div>
             <button routerLink="/students" routerLinkActive="router-link-active">

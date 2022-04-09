@@ -1,38 +1,38 @@
 <p>list works!</p>
-
-<button routerLink="/teachers/add">Add Student</button>
+<div>
+    <input type="text" name="search" name="users" placeholder="search by name" #filterName (change)="filterArray(filterName.value)">
+</div>
+<button routerLink="/teachers/add">Add Teacher</button>
 <table>
     <tr>
         <td>
             <thead>
-                <th >
-                    Reg. No.
-                </th>
-                <th >
-                    Name
-                </th>
-                <th >
-                    Age
-                </th> 
-                <th >
-                    Department
+                <th #asc *ngFor="let col of columns">
+                    <a (click)="sortedColumn = col">{{col}}</a>
                 </th>
                 <th>
                     Action
                 </th>
             </thead>
-    <tr *ngFor="let teacher of teacherInfo">
-        <td>{{ teacher.regNo }}</td>
+    <tr *ngFor="let teacher of filteredUsers | sort: sortedColumn : asc | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords}">
         <td>{{ teacher.name }}</td>
         <td>{{ teacher.age }}</td>
         <td>{{ teacher.dept }}</td>
+        <td>{{ teacher.id }}</td>
         <td>
-            <button (click)="onView(teacher)" >
+            <button (click)="onView(teacher)">
                 View
             </button>
-            <button (click)="onEdit(teacher)">
+            <button (click)="onEdit(teacher.id)">
                 Edit
             </button>
         </td>
     </tr>
+    <pagination-controls id="list" (pageChange)="page = $event"></pagination-controls>
+    <select #limitVal (change)="updateParam(limitVal.value)">
+        <option id="val1" value="5">5</option>
+        <option id="val2" value="10">10</option>
+        <option id="val3" value="25">25</option>
+        <option id="val4" value="50">50</option>
+    </select>
 </table>

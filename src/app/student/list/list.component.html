@@ -19,12 +19,12 @@
                 <th (click)="sortDept()">
                     Department
                 </th>
-                <th>More...</th>
+                 <th>More...</th>
                 <th>
                     Action
                 </th>
             </thead>
-    <tr *ngFor="let student of (studentInfo | studentFilter: nameFilter | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords})">
+    <tr *ngFor="let student of (studentInfo | studentFilter: nameFilter | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords} )">
         <!-- -->
         <td>{{ student.regNo }}</td>
         <td>{{ student.name }}</td>

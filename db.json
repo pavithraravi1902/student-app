@@ -19,7 +19,7 @@
   "students": [
     {
       "regNo": 2,
-      "name": "Yamunaravi2801",
+      "name": "Yamunaravi2801 ",
       "age": 20,
       "dept": "BBA",
       "id": 2
@@ -86,42 +86,93 @@
       "age": 3,
       "dept": "Pre-KG",
       "id": 14
-    }],
-    "teachers": [
-      {
-        "regNo": 18,
-        "name": "Devi",
-        "age": 16,
-        "dept": "12th",
-        "id": 10
-      },
-      {
-        "regNo": 19,
-        "name": "RamyaK7",
-        "age": 23,
-        "dept": "B.com",
-        "id": 11
-      },
-      {
-        "regNo": 20,
-        "name": "Ruthvik",
-        "age": 5,
-        "dept": "UKG",
-        "id": 12
-      },
-      {
-        "regNo": 21,
-        "name": "Saravanapriyan",
-        "age": 3,
-        "dept": "Pre-KG",
-        "id": 13
-      },
-      {
-        "regNo": 7,
-        "name": "Diya",
-        "age": 3,
-        "dept": "Pre-KG",
-        "id": 14
-      }
+    },
+    {
+      "regNo": 654,
+      "name": "kjhgf",
+      "age": 676,
+      "dept": "kjuyt",
+      "id": 15
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Yamuna R",
+      "age": 20,
+      "dept": "BBA",
+      "id": 2
+    },
+    {
+      "name": "Thrisha Jasmine",
+      "age": 20,
+      "dept": "B.com",
+      "id": 3
+    },
+    {
+      "name": "Kiruthika",
+      "age": 23,
+      "dept": "M.sc",
+      "id": 4
+    },
+    {
+      "name": "YamJas ",
+      "age": 22,
+      "dept": "23",
+      "id": 5
+    },
+    {
+      "name": "Devi",
+      "age": 17,
+      "dept": "12th",
+      "id": 6
+    },
+    {
+      "name": "Rams",
+      "age": 23,
+      "dept": "B.com",
+      "id": 7
+    },
+    {
+      "name": "Jayashree23",
+      "age": 23,
+      "dept": "B.sc",
+      "id": 8
+    },
+    {
+      "name": "Jai ma",
+      "age": 23,
+      "dept": "M.sc",
+      "id": 9
+    },
+    {
+      "name": "Janani",
+      "age": 22,
+      "dept": "M.sc",
+      "id": 10
+    },
+    {
+      "name": "Mitra",
+      "age": 23,
+      "dept": "B.sc",
+      "id": 11
+    },
+    {
+      "name": "yamu",
+      "age": 21,
+      "dept": "BBA",
+      "id": 12
+    },
+    {
+      "name": "Venba",
+      "age": 3,
+      "dept": "Pre-KG",
+      "id": 13
+    },
+    {
+      "name": "pavi",
+      "age": 21,
+      "dept": "M.Sc",
+      "id": 14
+    }
   ]
 }

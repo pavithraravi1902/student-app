@@ -1,1 +1,13 @@
 <p>view works!</p>
+<p>Teacher No: {{ routeParameter }}</p>
+<div>
+    <label>Name</label>: {{ teacher.name }} <br />
+    <label>Age</label>: {{ teacher.age }} <br />
+    <label>Department</label>: {{ teacher.dept }} <br />
+</div>
+<button routerLink="/teachers">
+    Back
+</button>
+<button (click)="onDelete()">
+    Delete
+</button>

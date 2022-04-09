@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, CanDeactivate, Router } from '@angular/router';
-import { ComponentCanDeactivate } from 'src/app/component-can-deactivate';
+import { ComponentCanDeactivate } from 'src/app/common-module/component-can-deactivate';
 import { Student, StudentService } from '../services/student.service';
 
 @Component({
@@ -14,7 +14,6 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
   validate = false;
   isDirty = false;
   isDisable = false;
-  record: Student[] = [];
   public get RouteParameter(): number {
     return this.routeParameter;
   }
@@ -30,7 +29,7 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
     });
   }
   ngOnInit(): void {
-    if (this.routeParameter > 0) {
+    if (this.routeParameter > 0) { 
       this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
         this.student = response;
       });

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Student, StudentService } from '../services/student.service';
 
 @Component({
-  selector: 'app-view',
+  selector: 'app-student-view',
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss']
 })

@@ -5,20 +5,19 @@ import { AppComponent } from './app.component';
 import { StudentModule } from './student/student.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { UniqueRegnoDirective } from './unique-regno.directive';
+import { UniqueRegnoDirective } from './common-module/common-directory/unique-regno.directive';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule} from 'ngx-pagination';
-import { AppInterceptor } from './app.interceptor';
+import { AppInterceptor } from './common-module/common-interceptor/app.interceptor';
 import { TeacherModule } from './teacher/teacher.module';
-//import { SortPipe } from './sort.pipe';
-
+//import { MatFormFieldModule } from '@angular/material/form-field';
+//import { MaterialModule } from './common-module/material/material.module';
 @NgModule({
   declarations: [
     AppComponent,
     UniqueRegnoDirective,
-   // SortPipe,
-  ],
+    
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,9 +25,9 @@ import { TeacherModule } from './teacher/teacher.module';
     FormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    BrowserAnimationsModule,
     NgxPaginationModule,
-    TeacherModule
+    TeacherModule,
+    //MaterialModule
   ],
   providers: [
     {
