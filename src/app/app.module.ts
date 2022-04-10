@@ -10,6 +10,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule} from 'ngx-pagination';
 import { AppInterceptor } from './common-module/common-interceptor/app.interceptor';
 import { TeacherModule } from './teacher/teacher.module';
+import { NgxSpinnerModule } from "ngx-spinner";  
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MaterialModule } from './common-module/material/material.module';
 @NgModule({
@@ -27,6 +28,7 @@ import { TeacherModule } from './teacher/teacher.module';
     Ng2SearchPipeModule,
     NgxPaginationModule,
     TeacherModule,
+    NgxSpinnerModule  
     //MaterialModule
   ],
   providers: [

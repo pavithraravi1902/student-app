@@ -7,14 +7,15 @@
     <tr>
         <td>
             <thead>
-                <th #asc *ngFor="let col of columns">
+                <th (click)="sortData(columns)" #asc *ngFor="let col of columns">
                     <a (click)="sortedColumn = col">{{col}}</a>
+                    <a (click)=" sortData(col)"></a>
                 </th>
                 <th>
                     Action
                 </th>
             </thead>
-    <tr *ngFor="let teacher of filteredUsers | sort: sortedColumn : asc | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords}">
+    <tr *ngFor="let teacher of filteredUsers | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords}">
         <td>{{ teacher.name }}</td>
         <td>{{ teacher.age }}</td>
         <td>{{ teacher.dept }}</td>

@@ -4,7 +4,7 @@ import { Student, StudentService } from '../services/student.service';
 
 
 @Component({
-  selector: 'app-student-list' ,
+  selector: 'app-student-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
 
   studentInfo: Array<Student> = [];
   totalRecords: any;
-  limit: any;
+  limit: number = 5;
   page: any = 1;
   arrange: any;
   nameFilter: string = "";

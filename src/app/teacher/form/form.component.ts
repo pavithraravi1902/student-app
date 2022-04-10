@@ -19,11 +19,12 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
   }
 
   constructor(private formBuilder: FormBuilder, private teacherService: TeacherService, private route: ActivatedRoute, private router: Router) {
-    this.teacherForm = this.getTeacherForm();
+    // this.teacherForm = this.getTeacherForm();
     this.route.params.subscribe((parameters) => {
       if (parameters["id"]) {
         this.routeParameter = Number(parameters["id"]);
       }
+      this.teacherForm = this.getTeacherForm();
     });
   }
 
@@ -89,6 +90,7 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
       id: [-1, [Validators.required]]
     });
   }
+
   private populateForm(teacher: Teacher): void {
     this.teacherForm.setValue(teacher);
   }
