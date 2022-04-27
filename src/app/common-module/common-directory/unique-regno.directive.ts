@@ -14,6 +14,6 @@ export class UniqueRegnoDirective implements AsyncValidator {
     console.log("ctor unique");
    }
   validate(reg: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
-    return this.studentService.getElementByregNo(reg.value);
+    return this.studentService.getByRegNo(reg.value);
   }
 }

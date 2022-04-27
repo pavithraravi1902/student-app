@@ -41,7 +41,7 @@ export class StudentService {
     return this.http.put(`http://localhost:3000/students/${id}`, data);
   }
 
-  public getElementByregNo(regNo: number) {
+  public getByRegNo(regNo: number) {
     return this.http.get<any>(`http://localhost:3000/students?regNo=${regNo}`);
   }
- }
+}

@@ -11,15 +11,17 @@ export class ViewComponent implements OnInit {
 
   routeParameter;
   student: Student = {} as Student;
-  
+
 
   constructor(private route: ActivatedRoute, private router: Router, private studentService: StudentService) {
-    this.routeParameter =  Number(this.route.snapshot.paramMap.get("id"));
-   }
+    this.routeParameter = Number(this.route.snapshot.paramMap.get("id"));
+  }
 
   ngOnInit(): void {
     this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
       this.student = response;
+    }, (error) => {
+      console.log("Error: ", error);
     });
   }
 
@@ -28,6 +30,8 @@ export class ViewComponent implements OnInit {
     this.studentService.removeStudentById(this.routeParameter).subscribe(() => {
       alert("Deleted successfully!");
       this.router.navigate(["students"]);
+    }, (error) => {
+      console.log("Error: ", error);
     });
   }
 }

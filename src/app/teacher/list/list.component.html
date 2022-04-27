@@ -1,25 +1,31 @@
 <p>list works!</p>
 <div>
-    <input type="text" name="search" name="users" placeholder="search by name" #filterName (change)="filterArray(filterName.value)">
+    <input type="text" name="search" name="users" placeholder="search by name" #filterName
+        (change)="filterArray(filterName.value)">
 </div>
 <button routerLink="/teachers/add">Add Teacher</button>
 <table>
     <tr>
         <td>
             <thead>
-                <th (click)="sortData(columns)" #asc *ngFor="let col of columns">
-                    <a (click)="sortedColumn = col">{{col}}</a>
-                    <a (click)=" sortData(col)"></a>
+                <th *ngFor="let col of columns ">
+                    <a (click)="sortedColumn = col; sortData(col)">{{col}}</a>
                 </th>
                 <th>
                     Action
                 </th>
             </thead>
-    <tr *ngFor="let teacher of filteredUsers | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords}">
-        <td>{{ teacher.name }}</td>
+    <tr
+        *ngFor="let teacher of filteredUsers | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords}">
+        <!-- <td>{{ teacher.id }}</td>
         <td>{{ teacher.age }}</td>
         <td>{{ teacher.dept }}</td>
-        <td>{{ teacher.id }}</td>
+        <td>{{ teacher.name }}</td>-->
+       <ng-container *ngFor="let col of columns">
+            <td>
+                {{ teacher[col] }}
+            </td>
+        </ng-container>
         <td>
             <button (click)="onView(teacher)">
                 View

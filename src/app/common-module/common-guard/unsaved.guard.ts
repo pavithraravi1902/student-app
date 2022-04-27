@@ -2,8 +2,6 @@ import { Injectable, Input } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateChild, CanDeactivate, CanLoad, Route, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ComponentCanDeactivate } from '../component-can-deactivate';
-import { FormComponent } from '../../student/form/form.component';
-import { FormComponent as Teacher } from '../../teacher/form/form.component'
 
 @Injectable({
   providedIn: 'root'

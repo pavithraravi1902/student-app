@@ -21,25 +21,21 @@ export class ListComponent implements OnInit {
     this.student.getAllStudents().subscribe((result) => {
       this.studentInfo = result;
       this.totalRecords = this.studentInfo.length;
+    }, (error) => {
+      console.log("Error: ", error);
     });
   }
 
   ngOnInit(): void {
   }
   onEdit(student: Student): void {
-    // this.router.navigate(["students", student.id, "edit"]);
     this.router.navigateByUrl(`students/${student.id}/edit`);
-    // this.router.navigateByUrl("students/" + student.id + "/edit");
   }
 
   onView(student: Student): void {
     this.router.navigate(["students", student.id, "view"]);
   }
-
-  onAdd(student: Student): void {
-    this.router.navigate(["students", student]);
-  }
-  sortData() {
+  sortRegNo() {
     if (this.arrange) {
       this.studentInfo.sort((a: any, b: any) => a.regNo - b.regNo);
     } else {

@@ -9,25 +9,22 @@ import { SortingPipe } from '../common-module/common-pipe/sort.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { TeacherPipe } from './teacher.pipe';
 //import { MaterialModule } from '../common-module/material/material.module';
- 
+
 
 @NgModule({
   declarations: [
-  ListComponent,
-  FormComponent,
-  ViewComponent,
-  SortingPipe,
-  TeacherPipe, 
-  
- ],
-  
+    ListComponent,
+    FormComponent,
+    ViewComponent,
+    SortingPipe,
+  ],
+
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
     NgxPaginationModule
-    ]
+  ]
 })
 export class TeacherModule { }

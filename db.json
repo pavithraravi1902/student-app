@@ -18,13 +18,6 @@
   ],
   "students": [
     {
-      "regNo": 2,
-      "name": "Yamunaravi2801 ",
-      "age": 20,
-      "dept": "BBA",
-      "id": 2
-    },
-    {
       "regNo": 3,
       "name": "Kiruthika",
       "age": 23,
@@ -86,93 +79,62 @@
       "age": 3,
       "dept": "Pre-KG",
       "id": 14
-    },
-    {
-      "regNo": 654,
-      "name": "kjhgf",
-      "age": 676,
-      "dept": "kjuyt",
-      "id": 15
     }
   ],
   "teachers": [
     {
-      "name": "Yamuna R",
-      "age": 20,
-      "dept": "BBA",
-      "id": 2
+      "ID": 1,
+      "Name": "Pavithra ",
+      "Age": 21,
+      "Dept": "M.sc"
     },
     {
-      "name": "Thrisha Jasmine",
-      "age": 20,
-      "dept": "B.com",
-      "id": 3
+      "ID": 2,
+      "Name": "Yamuna R",
+      "Age": 20,
+      "Dept": "BBA"
     },
     {
-      "name": "Kiruthika",
-      "age": 23,
-      "dept": "M.sc",
-      "id": 4
+      "ID": 3,
+      "Name": "Venba",
+      "Age": 3,
+      "Dept": "Pre-KG"
     },
     {
-      "name": "YamJas ",
-      "age": 22,
-      "dept": "23",
-      "id": 5
+      "Name": "Diyashree",
+      "Age": 3,
+      "Dept": "Pre-KG",
+      "ID": 4
     },
     {
-      "name": "Devi",
-      "age": 17,
-      "dept": "12th",
-      "id": 6
+      "ID": 5,
+      "Name": "Kiruthika S",
+      "Age": 23,
+      "Dept": "M.sc"
     },
     {
-      "name": "Rams",
-      "age": 23,
-      "dept": "B.com",
-      "id": 7
+      "ID": 6,
+      "Name": "Jayashree T",
+      "Age": 23,
+      "Dept": "M.sc"
     },
     {
-      "name": "Jayashree23",
-      "age": 23,
-      "dept": "B.sc",
-      "id": 8
+      "ID": 7,
+      "Name": "Thrisha Jasmine",
+      "Age": 20,
+      "Dept": "B.com"
     },
     {
-      "name": "Jai ma",
-      "age": 23,
-      "dept": "M.sc",
-      "id": 9
+      "ID": 8,
+      "Name": "Pavithra",
+      "Age": 21,
+      "Dept": "B.com"
     },
     {
-      "name": "Janani",
-      "age": 22,
-      "dept": "M.sc",
-      "id": 10
-    },
-    {
-      "name": "Mitra",
-      "age": 23,
-      "dept": "B.sc",
-      "id": 11
-    },
-    {
-      "name": "yamu",
-      "age": 21,
-      "dept": "BBA",
-      "id": 12
-    },
-    {
-      "name": "Venba",
-      "age": 3,
-      "dept": "Pre-KG",
-      "id": 13
-    },
-    {
-      "name": "pavi",
-      "age": 21,
-      "dept": "M.Sc",
-      "id": 14
+      "ID": 9,
+      "Name": "Ramya",
+      "Age": 23,
+      "Dept": "B.com"
     }
   ]
 }

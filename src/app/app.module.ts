@@ -7,18 +7,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { UniqueRegnoDirective } from './common-module/common-directory/unique-regno.directive';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppInterceptor } from './common-module/common-interceptor/app.interceptor';
 import { TeacherModule } from './teacher/teacher.module';
-import { NgxSpinnerModule } from "ngx-spinner";  
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MaterialModule } from './common-module/material/material.module';
 @NgModule({
   declarations: [
     AppComponent,
     UniqueRegnoDirective,
-    
-],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,15 +29,16 @@ import { NgxSpinnerModule } from "ngx-spinner";
     Ng2SearchPipeModule,
     NgxPaginationModule,
     TeacherModule,
-    NgxSpinnerModule  
-    //MaterialModule
-  ],
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AppInterceptor,
       multi: true
-    }
+    },
+    //MaterialModule
   ],
   bootstrap: [AppComponent]
 })

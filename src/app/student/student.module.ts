@@ -16,7 +16,7 @@ import { StudentFilterPipe } from '../common-module/common-pipe';
     ViewComponent,
     FormComponent,
     ItemPopoverComponent,
-    StudentFilterPipe
+    StudentFilterPipe,
   ],
   imports: [
     CommonModule,

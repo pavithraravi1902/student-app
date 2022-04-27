@@ -28,11 +28,6 @@ const routes: Routes = [
     path: "students/:id/view",
     component: StudentViewComponent
   },
-  /*{
-    path: "",
-    redirectTo: "students",
-    pathMatch: "full"
-  },*/
   {
     path: "teachers",
     component: TeacherListComponent
@@ -52,7 +47,7 @@ const routes: Routes = [
     component: TeacherViewComponent
   }
 ];
-  
+
 @NgModule({
   imports: [RouterModule.forRoot(routes), FormsModule],
   exports: [RouterModule]

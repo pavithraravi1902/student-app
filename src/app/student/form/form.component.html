@@ -2,8 +2,8 @@
 <p>Student No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
 <div>
     <div>
-        <label>RegNo</label>:<input type="number" [disabled]="isDisable" (change)="isDirty=true" (blur)="validateReg()" (click)="disablefn()"
-            [(ngModel)]="student.regNo" required #sreg="ngModel">
+        <label>RegNo</label>:<input type="number" [disabled]="isDisable" (change)="isDirty=true" (blur)="validateReg()"
+            (click)="disablefn()" [(ngModel)]="student.regNo" required #sreg="ngModel">
         <div *ngIf="sreg.invalid && sreg.touched">
             Register Number required.
         </div>
@@ -12,31 +12,31 @@
         </div>
         <br />
         <div *ngIf="routeParameter"></div>
-        <label>Name</label>:<input type="text" (change)="isDirty=true" [(ngModel)]="student.name" required
+        <label>Name</label>:<input type="text" (change)="isDirty=true" [(ngModel)]="student.name"
             #sname="ngModel">
         <div *ngIf="sname.touched && sname.invalid">
             Name required.
         </div>
         <br />
-        <label>Age</label>:<input type="number" (change)="isDirty=true" [(ngModel)]="student.age" required
+        <label>Age</label>:<input type="number" (change)="isDirty=true" [(ngModel)]="student.age"
             #sage="ngModel">
         <div *ngIf="sage.touched && sage.invalid">
             age required.
         </div>
         <br />
-        <label>Department</label>:<input type="text" ng-mouseover="showData()" (change)="isDirty=true" [(ngModel)]="student.dept" required
-            #sdept="ngModel">
+        <label>Department</label>:<input type="text" (change)="isDirty=true"
+            [(ngModel)]="student.dept" required #sdept="ngModel">
         <div *ngIf="sdept.touched && sdept.invalid">
             dept required.
-        </div> 
+        </div>
         <br />
         <div>
-            <button routerLink="/students" routerLinkActive="router-link-active">
+            <button mat-raised-button routerLink="/students" routerLinkActive="router-link-active">
                 Cancel
             </button>
         </div>
         <div>
-            <button type="submit" (click)="save(); isDirty=false" id="">{{ RouteParameter > 0? 'Update' : 'Create' }}
+            <button mat-raised-button type="submit" (click)="save(); isDirty=false">{{ RouteParameter > 0? 'Update' : 'Create' }}
             </button>
         </div>
     </div>

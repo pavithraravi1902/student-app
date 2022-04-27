@@ -14,8 +14,8 @@ export class AppComponent {
   constructor() {
   }
   @HostListener('window:beforeunload', ['$event'])
-   onClose(event: any): void {
-     event.preventDefault();
-     event.returnValue = false;
+  onClose(event: any): void {
+    event.preventDefault();
+    event.returnValue = false;
   }
 }
