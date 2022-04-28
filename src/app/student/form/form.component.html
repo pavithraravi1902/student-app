@@ -1,42 +1,45 @@
-<p>form works!</p>
-<p>Student No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
-<div>
-    <div>
-        <label>RegNo</label>:<input type="number" [disabled]="isDisable" (change)="isDirty=true" (blur)="validateReg()"
-            (click)="disablefn()" [(ngModel)]="student.regNo" required #sreg="ngModel">
-        <div *ngIf="sreg.invalid && sreg.touched">
-            Register Number required.
-        </div>
-        <div *ngIf="ValidRegNo">
-            Register Number invalid.
-        </div>
-        <br />
-        <div *ngIf="routeParameter"></div>
-        <label>Name</label>:<input type="text" (change)="isDirty=true" [(ngModel)]="student.name"
-            #sname="ngModel">
-        <div *ngIf="sname.touched && sname.invalid">
-            Name required.
-        </div>
-        <br />
-        <label>Age</label>:<input type="number" (change)="isDirty=true" [(ngModel)]="student.age"
-            #sage="ngModel">
-        <div *ngIf="sage.touched && sage.invalid">
-            age required.
-        </div>
-        <br />
-        <label>Department</label>:<input type="text" (change)="isDirty=true"
-            [(ngModel)]="student.dept" required #sdept="ngModel">
-        <div *ngIf="sdept.touched && sdept.invalid">
-            dept required.
-        </div>
-        <br />
+<div style="text-align:center" class="container">
+    <p>form works!</p>
+    <p>Student No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
+    <div >
         <div>
-            <button mat-raised-button routerLink="/students" routerLinkActive="router-link-active">
-                Cancel
-            </button>
-        </div>
-        <div>
-            <button mat-raised-button type="submit" (click)="save(); isDirty=false">{{ RouteParameter > 0? 'Update' : 'Create' }}
-            </button>
+            <label>RegNo</label>:<input style="background-color:rgb(216, 230, 236)" type="number" [disabled]="isDisable" (change)="isDirty=true"
+                (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.regNo" required #sreg="ngModel">
+            <div *ngIf="sreg.invalid && sreg.touched">
+                Register Number required.
+            </div>
+            <div *ngIf="ValidRegNo">
+                Register Number invalid.
+            </div>
+            <br />
+            <br />
+            <div *ngIf="routeParameter"></div>
+            <label>Name</label>:<input type="text" style="background-color:rgb(216, 230, 236)" (change)="isDirty=true" [(ngModel)]="student.name" #sname="ngModel">
+            <div *ngIf="sname.touched && sname.invalid">
+                Name required.
+            </div>
+            <br />
+            <br />
+            <label>Age</label>:<input type="number" style="background-color:rgb(216, 230, 236)" (change)="isDirty=true" [(ngModel)]="student.age" #sage="ngModel">
+            <div *ngIf="sage.touched && sage.invalid">
+                age required.
+            </div>
+            <br />
+            <br />
+            <label>Department</label>:<input type="text" style="background-color:rgb(216, 230, 236)" (change)="isDirty=true" [(ngModel)]="student.dept" required
+                #sdept="ngModel">
+            <div *ngIf="sdept.touched && sdept.invalid">
+                dept required.
+            </div>
+            <br />
+            <br />
+            <div>
+                <button mat-raised-button routerLink="/students" routerLinkActive="router-link-active">
+                    Cancel
+                </button>
+                <button mat-raised-button type="submit" (click)="save(); isDirty=false">{{ RouteParameter > 0? 'Update'
+                    : 'Create' }}
+                </button>
+            </div>
         </div>
     </div>

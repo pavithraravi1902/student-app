@@ -1,12 +1,13 @@
+<div style="text-align: center" class="container">
 <p>list works!</p>
 <div>
-    <input type="text" name="search" [(ngModel)]="nameFilter" placeholder="search by name">
+    <input style="background-color: rgb(216, 230, 236); width:30%" type="text" name="search" [(ngModel)]="nameFilter" placeholder="search by name">
 </div>
-<button routerLink="/students/add">Add Student</button>
-<table>
-    <tr>
-        <td>
-            <thead>
+<button style="width:30%; background-color: rgb(216, 230, 236)" routerLink="/students/add">Add Student</button>
+<table class="table-container" style="width:15%; background-color: rgb(216, 230, 236); vertical-align: top; " class="center">
+    <tr >
+        <td >
+            <thead >
                 <th (click)="sortRegNo()">
                     Reg. No.
                 </th>
@@ -33,12 +34,14 @@
             <app-item-popover [data]="student"></app-item-popover>
         </td>
         <td>
+            <div>
             <button mat-raised-button [routerLink]="['/students', student.id, 'view']">
                 View
             </button>
             <button mat-raised-button (click)="onEdit(student)">
                 Edit
             </button>
+        </div>
         </td>
     </tr>
     <pagination-controls id="list" (pageChange)="page = $event"></pagination-controls>
@@ -49,3 +52,4 @@
         <option value="50">50</option>
     </select>
 </table>
+</div>

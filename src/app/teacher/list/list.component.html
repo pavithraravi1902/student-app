@@ -1,18 +1,22 @@
+<div style="text-align:center; background-color: skyblue;" class="container">
 <p>list works!</p>
 <div>
-    <input type="text" name="search" name="users" placeholder="search by name" #filterName
+    <input style="background-color: rgb(216, 230, 236); width:30%" type="text" name="search" name="users" placeholder="search by name" #filterName
         (change)="filterArray(filterName.value)">
 </div>
-<button routerLink="/teachers/add">Add Teacher</button>
-<table>
+<button style="width:30%; background-color: rgb(216, 230, 236)" routerLink="/teachers/add">Add Teacher</button>
+<table style="width: 30%;  background-color: rgb(216, 230, 236); vertical-align: top;" class="center">
     <tr>
-        <td>
+        <td class="col">
             <thead>
                 <th *ngFor="let col of columns ">
                     <a (click)="sortedColumn = col; sortData(col)">{{col}}</a>
                 </th>
                 <th>
                     Action
+                </th>
+                <th>
+                    More..
                 </th>
             </thead>
     <tr
@@ -27,14 +31,20 @@
             </td>
         </ng-container>
         <td>
+            <div>
             <button (click)="onView(teacher)">
                 View
             </button>
             <button (click)="onEdit(teacher.id)">
                 Edit
             </button>
+        </div>
+        </td>
+        <td>
+            <app-item-popover [data]="teacher"></app-item-popover>
         </td>
     </tr>
+    
     <pagination-controls id="list" (pageChange)="page = $event"></pagination-controls>
     <select #limitVal (change)="updateParam(limitVal.value)">
         <option id="val1" value="5">5</option>
@@ -43,3 +53,4 @@
         <option id="val4" value="50">50</option>
     </select>
 </table>
+</div>

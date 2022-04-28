@@ -79,62 +79,57 @@
       "age": 3,
       "dept": "Pre-KG",
       "id": 14
+    },
+    {
+      "regNo": 0,
+      "name": "o0-=",
+      "age": 9,
+      "dept": "io",
+      "id": 15
     }
   ],
   "teachers": [
     {
-      "ID": 1,
-      "Name": "Pavithra ",
-      "Age": 21,
-      "Dept": "M.sc"
+      "id": 3,
+      "name": "Venba",
+      "age": 3,
+      "dept": "Pre-KG"
     },
     {
-      "ID": 2,
-      "Name": "Yamuna R",
-      "Age": 20,
-      "Dept": "BBA"
+      "id": 4,
+      "name": "Diyashree",
+      "age": 3,
+      "dept": "Pre-KG"
     },
     {
-      "ID": 3,
-      "Name": "Venba",
-      "Age": 3,
-      "Dept": "Pre-KG"
+      "id": 5,
+      "name": "Kiruthika S",
+      "age": 23,
+      "dept": "M.sc"
     },
     {
-      "Name": "Diyashree",
-      "Age": 3,
-      "Dept": "Pre-KG",
-      "ID": 4
+      "id": 6,
+      "name": "Jayashree T",
+      "age": 23,
+      "dept": "M.sc"
     },
     {
-      "ID": 5,
-      "Name": "Kiruthika S",
-      "Age": 23,
-      "Dept": "M.sc"
+      "id": 7,
+      "name": "Thrisha Jasmine",
+      "age": 20,
+      "dept": "B.com"
     },
     {
-      "ID": 6,
-      "Name": "Jayashree T",
-      "Age": 23,
-      "Dept": "M.sc"
+      "id": 8,
+      "name": "Pavithra",
+      "age": 21,
+      "dept": "B.com"
     },
     {
-      "ID": 7,
-      "Name": "Thrisha Jasmine",
-      "Age": 20,
-      "Dept": "B.com"
-    },
-    {
-      "ID": 8,
-      "Name": "Pavithra",
-      "Age": 21,
-      "Dept": "B.com"
-    },
-    {
-      "ID": 9,
-      "Name": "Ramya",
-      "Age": 23,
-      "Dept": "B.com"
+      "id": 9,
+      "name": "Ramya",
+      "age": 23,
+      "dept": "B.com"
     }
   ]
 }

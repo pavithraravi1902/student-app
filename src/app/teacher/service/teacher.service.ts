@@ -7,11 +7,11 @@ export interface ITeacher {
 }
 
 export interface Teacher extends ITeacher {
-  id: number;
   name: string;
   age: number;
   dept: string;
-  }
+  id: number;
+}
 
 @Injectable({
   providedIn: 'root'

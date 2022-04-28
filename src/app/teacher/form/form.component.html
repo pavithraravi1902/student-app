@@ -1,22 +1,27 @@
+<div class="container" style="text-align:center">
 <p>form works!</p>
 <p>Teacher No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
 {{ teacherForm.value | json }}
 <form [formGroup]="teacherForm" (ngSubmit)="onSubmit(); isDirty=false">
     <label>Name</label>:
-    <input type="text" formControlName="name" (change)="isDirty=true" />
+    <input type="text"  style="background-color:rgb(216, 230, 236)" formControlName="name" (change)="isDirty=true" />
     <span *ngIf="teacherForm.touched && teacherForm.controls['name']?.errors?.['required']">Teacher name required</span>
     <br />
+    <br />
     <label>Age</label>:
-    <input type="number" formControlName="age" (change)="isDirty=true"/>
+    <input type="number"  style="background-color:rgb(216, 230, 236)" formControlName="age" (change)="isDirty=true"/>
     <span *ngIf="teacherForm.touched && teacherForm.controls['age']?.errors?.['required']">Teacher age required</span>
     <br />
+    <br />
     <label>Department</label>:
-    <input type="text" formControlName="dept" (change)="isDirty=true"/>
+    <input type="text"  style="background-color:rgb(216, 230, 236)" formControlName="dept" (change)="isDirty=true"/>
     <span *ngIf="teacherForm.touched && teacherForm.controls['dept']?.errors?.['required']">Teacher Department
         required</span>
+    <br />
     <br />
     <div>
         <button routerLink="/teachers">Cancel</button>
         <button [disabled]="teacherForm.invalid"  (change)="isDirty=false" type="submit">Submit</button>
     </div>
 </form>
+</div>
