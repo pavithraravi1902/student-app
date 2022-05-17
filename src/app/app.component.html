@@ -1,7 +1,10 @@
+<mat-menu #appMenu="matMenu">
 <div style="text-align:center">
-<button routerLink="/teachers">Teacher Info</button>
-<button routerLink="/students">Student Info</button>
+<button mat-menu-item  color="accent" routerLink="/teachers">Teacher Info</button>
+<button  mat-menu-item color="primary" routerLink="/students">Student Info</button>
 </div>
+</mat-menu>
+<button mat-flat-button color="accent"[matMenuTriggerFor]="appMenu">Menu</button>
 <!--<div>
     <table style="width: 100%;">
       <tr>

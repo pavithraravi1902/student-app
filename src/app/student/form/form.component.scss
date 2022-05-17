@@ -1,8 +1,15 @@
 .container{
-  background-color: rgb(216, 230, 236);
-  border-spacing: 30px;
+  background-color: rgb(182, 223, 243);
+  //border-spacing: 30px;
   width: 700px;
-  border: 20px solid rgb(100, 192, 231);
+  border: 20px solid rgb(182, 223, 243);
   padding: 50px;
   margin: 85px;
+}
+.greenColor{
+  background-color: greenyellow;
+}
+.mat-form-field{
+  color: black;
+  border: 1px black;
 }

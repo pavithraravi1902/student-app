@@ -12,9 +12,12 @@ import { AppInterceptor } from './common-module/common-interceptor/app.intercept
 import { TeacherModule } from './teacher/teacher.module';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './common-module/material/material.module';
+// import { MatButtonModule } from '@angular/material/button';
 
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MaterialModule } from './common-module/material/material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,15 +25,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     StudentModule,
     FormsModule,
+    MaterialModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
     TeacherModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule,
+
+    // MatButtonModule,
+    //MatFormFieldModule
+   
     ],
   providers: [
     {

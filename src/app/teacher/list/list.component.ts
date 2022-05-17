@@ -18,11 +18,12 @@ export class ListComponent implements OnInit {
   columns: string[] = [];
   sortedColumn: any;
   totalRecords: any;
-  page: any = 1;
-  limit: any = 5;
+  page = 1;
+  limit:number= NaN;
   asc: any;
   arrange: any
   filteredUsers: Array<Teacher> = [];
+  options:any = this.filteredUsers;
 
   constructor(private teacher: TeacherService, private router: Router, private SpinnerService: NgxSpinnerService) {
     this.SpinnerService.show();
@@ -50,7 +51,7 @@ export class ListComponent implements OnInit {
     this.router.navigate(["teachers", teacher.id, "view"]);
   }
 
-  updateParam(limitVal: any) {
+  updateParam(limitVal: number) {
     this.limit = limitVal;
   }
   filterArray(value: string): any {

@@ -1,56 +1,67 @@
-<div style="text-align:center; background-color: skyblue;" class="container">
-<p>list works!</p>
-<div>
-    <input style="background-color: rgb(216, 230, 236); width:30%" type="text" name="search" name="users" placeholder="search by name" #filterName
-        (change)="filterArray(filterName.value)">
-</div>
-<button style="width:30%; background-color: rgb(216, 230, 236)" routerLink="/teachers/add">Add Teacher</button>
-<table style="width: 30%;  background-color: rgb(216, 230, 236); vertical-align: top;" class="center">
-    <tr>
-        <td class="col">
-            <thead>
-                <th *ngFor="let col of columns ">
-                    <a (click)="sortedColumn = col; sortData(col)">{{col}}</a>
-                </th>
-                <th>
-                    Action
-                </th>
-                <th>
-                    More..
-                </th>
-            </thead>
-    <tr
-        *ngFor="let teacher of filteredUsers | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords}">
-        <!-- <td>{{ teacher.id }}</td>
+<div style="text-align:center" class="container">
+    <mat-toolbar color="accent">
+    <p>list works!</p>
+    </mat-toolbar>
+    <div>
+        <mat-form-field>
+            <input style=" width:30%" matInput type="text" name="search" name="users" placeholder="search by name"
+                #filterName (change)="filterArray(filterName.value)" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="accent" style="width:30%" routerLink="/teachers/add">Add Teacher</button>
+    <table style="width: 30%; vertical-align: top;" class="center">
+        <tr>
+            <td class="col">
+                <thead>
+                    <th *ngFor="let col of columns ">
+                        <a (click)="sortedColumn = col; sortData(col)">{{col}}</a>
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                    <th>
+                        More..
+                    </th>
+                </thead>
+        <tr
+            *ngFor="let teacher of filteredUsers | paginate: { id: 'list', itemsPerPage: limit, currentPage: page, totalItems: totalRecords}">
+            <!-- <td>{{ teacher.id }}</td>
         <td>{{ teacher.age }}</td>
         <td>{{ teacher.dept }}</td>
         <td>{{ teacher.name }}</td>-->
-       <ng-container *ngFor="let col of columns">
+            <ng-container *ngFor="let col of columns">
+                <td>
+                    {{ teacher[col] }}
+                </td>
+            </ng-container>
             <td>
-                {{ teacher[col] }}
+                <div>
+                    <button mat-raised-button color="accent" (click)="onView(teacher)">
+                        View
+                    </button>
+                    <button mat-raised-button color="accent" (click)="onEdit(teacher.id)">
+                        Edit
+                    </button>
+                </div>
             </td>
-        </ng-container>
-        <td>
-            <div>
-            <button (click)="onView(teacher)">
-                View
-            </button>
-            <button (click)="onEdit(teacher.id)">
-                Edit
-            </button>
-        </div>
-        </td>
-        <td>
-            <app-item-popover [data]="teacher"></app-item-popover>
-        </td>
-    </tr>
-    
-    <pagination-controls id="list" (pageChange)="page = $event"></pagination-controls>
+            <td>
+                <app-item-popover [data]="teacher"></app-item-popover>
+            </td>
+        </tr>
+        <mat-paginator id="list" [length]="100" blur="updateParam(list.value)" [pageSize]="limit" [pageSizeOptions]="[5, 10]"
+            aria-label="Select page">
+        </mat-paginator>
+        <!--<pagination-controls id="list" (pageChange)="page = $event"></pagination-controls>
     <select #limitVal (change)="updateParam(limitVal.value)">
         <option id="val1" value="5">5</option>
         <option id="val2" value="10">10</option>
         <option id="val3" value="25">25</option>
         <option id="val4" value="50">50</option>
-    </select>
-</table>
+    </select>-->
+    </table>
 </div>

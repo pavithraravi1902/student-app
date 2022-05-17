@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { CanDeactivate, Router } from '@angular/router';
 import { Student, StudentService } from '../services/student.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
@@ -16,17 +18,32 @@ export class ListComponent implements OnInit {
   page: any = 1;
   arrange: any;
   nameFilter: string = "";
+  options: any = this.nameFilter;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
 
   constructor(private student: StudentService, private router: Router) {
     this.student.getAllStudents().subscribe((result) => {
       this.studentInfo = result;
       this.totalRecords = this.studentInfo.length;
+      console.log(this.studentInfo)
     }, (error) => {
       console.log("Error: ", error);
     });
   }
+  girdListData: MatTableDataSource<any>;
+  displayedColumns: string[] = ["regNo", "name", "dept"];
 
   ngOnInit(): void {
+    this.fillGrid();
+    this.girdListData.paginator = this.paginator;
+    console.log("pavithraravi", this.girdListData);
+  }
+
+  fillGrid() {
+    this.student.getAllStudents().subscribe(data => {
+      this.girdListData = new MatTableDataSource(data);
+    });
   }
   onEdit(student: Student): void {
     this.router.navigateByUrl(`students/${student.id}/edit`);

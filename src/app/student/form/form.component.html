@@ -1,44 +1,55 @@
 <div style="text-align:center" class="container">
     <p>form works!</p>
     <p>Student No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
-    <div >
+    <div>
         <div>
-            <label>RegNo</label>:<input style="background-color:rgb(216, 230, 236)" type="number" [disabled]="isDisable" (change)="isDirty=true"
-                (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.regNo" required #sreg="ngModel">
-            <div *ngIf="sreg.invalid && sreg.touched">
-                Register Number required.
-            </div>
-            <div *ngIf="ValidRegNo">
-                Register Number invalid.
-            </div>
+            <mat-form-field>
+                <mat-label>RegNo</mat-label><input matInput type="number" [disabled]="isDisable"
+                    (change)="isDirty=true" (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.regNo"
+                    required #sreg="ngModel">
+                <div *ngIf="sreg.invalid && sreg.touched">
+                    Register Number required.
+                </div>
+                <div *ngIf="ValidRegNo">
+                    Register Number invalid.
+                </div>
+            </mat-form-field>
             <br />
             <br />
-            <div *ngIf="routeParameter"></div>
-            <label>Name</label>:<input type="text" style="background-color:rgb(216, 230, 236)" (change)="isDirty=true" [(ngModel)]="student.name" #sname="ngModel">
-            <div *ngIf="sname.touched && sname.invalid">
-                Name required.
-            </div>
+            <mat-form-field>
+                <div *ngIf="routeParameter"></div>
+                <mat-label>Name</mat-label><input matInput type="text" (change)="isDirty=true"
+                    [(ngModel)]="student.name" required #sname="ngModel">
+                <div *ngIf="sname.touched && sname.invalid">
+                    Name required.
+                </div>
+            </mat-form-field>
             <br />
             <br />
-            <label>Age</label>:<input type="number" style="background-color:rgb(216, 230, 236)" (change)="isDirty=true" [(ngModel)]="student.age" #sage="ngModel">
-            <div *ngIf="sage.touched && sage.invalid">
-                age required.
-            </div>
+            <mat-form-field>
+                <mat-label>Age</mat-label><input matInput type="number" (change)="isDirty=true"
+                    [(ngModel)]="student.age" required #sage="ngModel">
+                <div *ngIf="sage.touched && sage.invalid">
+                    Age required.
+                </div>
+            </mat-form-field>
             <br />
             <br />
-            <label>Department</label>:<input type="text" style="background-color:rgb(216, 230, 236)" (change)="isDirty=true" [(ngModel)]="student.dept" required
-                #sdept="ngModel">
-            <div *ngIf="sdept.touched && sdept.invalid">
-                dept required.
-            </div>
+            <mat-form-field>
+                <mat-label>Department</mat-label><input matInput type="text" (change)="isDirty=true"
+                    [(ngModel)]="student.dept" required #sdept="ngModel">
+                <div *ngIf="sdept.touched && sdept.invalid">
+                    Dept required.
+                </div>
+            </mat-form-field>
             <br />
             <br />
             <div>
-                <button mat-raised-button routerLink="/students" routerLinkActive="router-link-active">
+                <button mat-raised-button color="primary" routerLink="/students" routerLinkActive="router-link-active">
                     Cancel
                 </button>
-                <button mat-raised-button type="submit" (click)="save(); isDirty=false">{{ RouteParameter > 0? 'Update'
-                    : 'Create' }}
+                <button mat-raised-button color="primary" type="submit" (click)="save(); isDirty=false">{{
+                    RouteParameter > 0? 'Update' : 'Create' }}
                 </button>
             </div>
         </div>

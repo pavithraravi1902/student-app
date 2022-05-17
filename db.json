@@ -79,22 +79,9 @@
       "age": 3,
       "dept": "Pre-KG",
       "id": 14
-    },
-    {
-      "regNo": 0,
-      "name": "o0-=",
-      "age": 9,
-      "dept": "io",
-      "id": 15
     }
   ],
   "teachers": [
-    {
-      "id": 3,
-      "name": "Venba",
-      "age": 3,
-      "dept": "Pre-KG"
-    },
     {
       "id": 4,
       "name": "Diyashree",
@@ -130,6 +117,12 @@
       "name": "Ramya",
       "age": 23,
       "dept": "B.com"
+    },
+    {
+      "name": "Kiruthika Srinivasan",
+      "age": 23,
+      "dept": "M.Sc",
+      "id": 10
     }
   ]
 }

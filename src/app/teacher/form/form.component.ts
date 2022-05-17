@@ -6,7 +6,8 @@ import { ComponentCanDeactivate } from 'src/app/common-module/component-can-deac
 @Component({
   selector: 'app-teacher-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
+ // providers: [{provide: MatFormFieldControl, useExisting: MyTelInput}]
 })
 export class FormComponent implements OnInit, ComponentCanDeactivate {
   teacherForm: FormGroup;
