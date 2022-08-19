@@ -24,10 +24,10 @@ export class SortingPipe implements PipeTransform {
     //console.log(collection);
     if (!collection || !criteria)
       return collection;
-    
+
     let column: string = criteria.property;
 
-    let sortFn:(a: any, b: any) => any = (a, b) => {
+    let sortFn: (a: any, b: any) => any = (a, b) => {
       let value: number;
       if (a[column] === undefined) value = -1;
       else if (b[column] === undefined) value = 1;

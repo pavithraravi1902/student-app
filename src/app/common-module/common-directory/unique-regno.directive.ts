@@ -12,7 +12,7 @@ export class UniqueRegnoDirective implements AsyncValidator {
 
   constructor(private studentService: StudentService) {
     console.log("ctor unique");
-   }
+  }
   validate(reg: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     return this.studentService.getByRegNo(reg.value);
   }

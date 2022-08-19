@@ -19,11 +19,11 @@ export class ListComponent implements OnInit {
   sortedColumn: any;
   totalRecords: any;
   page = 1;
-  limit:number= NaN;
+  limit: number = NaN;
   asc: any;
   arrange: any
   filteredUsers: Array<Teacher> = [];
-  options:any = this.filteredUsers;
+  options: any = this.filteredUsers;
 
   constructor(private teacher: TeacherService, private router: Router, private SpinnerService: NgxSpinnerService) {
     this.SpinnerService.show();
@@ -62,7 +62,7 @@ export class ListComponent implements OnInit {
     }
   }
   sortData(fieldName: string) {
-   // console.log("pavi", fieldName);
+    // console.log("pavi", fieldName);
     if (this.arrange) {
       this.teacherInfo.sort(function (a: any, b: any) {
         let x = typeof a[fieldName] == "string" ? (a[fieldName] as string).toLowerCase() : a[fieldName];

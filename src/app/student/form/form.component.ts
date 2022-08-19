@@ -11,12 +11,12 @@ import { Student, StudentService } from '../services/student.service';
 export class FormComponent implements OnInit, ComponentCanDeactivate {
   routeParameter: number = -1;
   student: Student = {} as Student;
-  array:number[]=[1,9,4];
-  arrayVal:any;
+  array: number[] = [1, 9, 4];
+  arrayVal: any;
   validate = false;
   isDirty = false;
   isDisable = false;
-  
+
   public get RouteParameter(): number {
     return this.routeParameter;
   }
@@ -85,7 +85,7 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
       }
     } else {
       this.validate = true;
-    } 
+    }
   }
   disablefn(): any {
     if (this.routeParameter > 0) {
@@ -94,8 +94,8 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
       this.isDisable = false;
     }
   }
-  maxfn(){
-    this.arrayVal=this.array.sort();
-    console.log("pavi",this.arrayVal);
+  maxfn() {
+    this.arrayVal = this.array.sort();
+    console.log("pavi", this.arrayVal);
   }
 }

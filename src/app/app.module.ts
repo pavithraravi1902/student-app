@@ -22,7 +22,7 @@ import { MaterialModule } from './common-module/material/material.module';
   declarations: [
     AppComponent,
     UniqueRegnoDirective,
-    ],
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -38,8 +38,8 @@ import { MaterialModule } from './common-module/material/material.module';
 
     // MatButtonModule,
     //MatFormFieldModule
-   
-    ],
+
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

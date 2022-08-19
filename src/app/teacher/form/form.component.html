@@ -12,18 +12,18 @@
         <br />
         <br />
         <mat-form-field>
-        <mat-label>Age</mat-label>:
-        <input type="number" matInput formControlName="age" (change)="isDirty=true" />
-        <span *ngIf="teacherForm.touched && teacherForm.controls['age']?.errors?.['required']">Teacher age
-            required</span>
+            <mat-label>Age</mat-label>:
+            <input type="number" matInput formControlName="age" (change)="isDirty=true" />
+            <span *ngIf="teacherForm.touched && teacherForm.controls['age']?.errors?.['required']">Teacher age
+                required</span>
         </mat-form-field>
         <br />
         <br />
         <mat-form-field>
-        <mat-label>Department</mat-label>:
-        <input type="text" matInput formControlName="dept" (change)="isDirty=true" />
-        <span *ngIf="teacherForm.touched && teacherForm.controls['dept']?.errors?.['required']">Teacher Department
-            required</span>
+            <mat-label>Department</mat-label>:
+            <input type="text" matInput formControlName="dept" (change)="isDirty=true" />
+            <span *ngIf="teacherForm.touched && teacherForm.controls['dept']?.errors?.['required']">Teacher Department
+                required</span>
         </mat-form-field>
         <br />
         <br />

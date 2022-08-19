@@ -4,9 +4,8 @@
     <div>
         <div>
             <mat-form-field>
-                <mat-label>RegNo</mat-label><input matInput type="number" [disabled]="isDisable"
-                    (change)="isDirty=true" (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.regNo"
-                    required #sreg="ngModel">
+                <mat-label>RegNo</mat-label><input matInput type="number" [disabled]="isDisable" (change)="isDirty=true"
+                    (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.regNo" required #sreg="ngModel">
                 <div *ngIf="sreg.invalid && sreg.touched">
                     Register Number required.
                 </div>

@@ -1,13 +1,13 @@
 .popover {
-    background-color:rgb(216, 230, 236);
-    border: 1px solid rgb(20, 20, 20);
-    pointer-events: none;
-    opacity: 0;
-    position: absolute;
-    transition: all 500ms ease 0s;
-  }
-  
-  .active {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  background-color: rgb(216, 230, 236);
+  border: 1px solid rgb(20, 20, 20);
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  transition: all 500ms ease 0s;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: auto;
+}

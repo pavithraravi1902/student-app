@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class SharedService {
 
   constructor() { }
-  public sortData(param1:any, param2:any) {
-    let arrange:any;
+  public sortData(param1: any, param2: any) {
+    let arrange: any;
     if (arrange) {
       param1.sort((a: any, b: any) => a.param2 - b.param2);
     } else {

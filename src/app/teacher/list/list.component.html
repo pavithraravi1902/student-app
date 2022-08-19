@@ -1,6 +1,6 @@
 <div style="text-align:center" class="container">
     <mat-toolbar color="accent">
-    <p>list works!</p>
+        <p>list works!</p>
     </mat-toolbar>
     <div>
         <mat-form-field>
@@ -53,8 +53,8 @@
                 <app-item-popover [data]="teacher"></app-item-popover>
             </td>
         </tr>
-        <mat-paginator id="list" [length]="100" blur="updateParam(list.value)" [pageSize]="limit" [pageSizeOptions]="[5, 10]"
-            aria-label="Select page">
+        <mat-paginator id="list" [length]="100" blur="updateParam(list.value)" [pageSize]="limit"
+            [pageSizeOptions]="[5, 10]" aria-label="Select page">
         </mat-paginator>
         <!--<pagination-controls id="list" (pageChange)="page = $event"></pagination-controls>
     <select #limitVal (change)="updateParam(limitVal.value)">

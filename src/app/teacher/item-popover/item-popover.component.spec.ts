@@ -8,9 +8,9 @@ describe('ItemPopoverComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemPopoverComponent ]
+      declarations: [ItemPopoverComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

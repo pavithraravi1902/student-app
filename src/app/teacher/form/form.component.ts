@@ -7,7 +7,7 @@ import { ComponentCanDeactivate } from 'src/app/common-module/component-can-deac
   selector: 'app-teacher-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
- // providers: [{provide: MatFormFieldControl, useExisting: MyTelInput}]
+  // providers: [{provide: MatFormFieldControl, useExisting: MyTelInput}]
 })
 export class FormComponent implements OnInit, ComponentCanDeactivate {
   teacherForm: FormGroup;
@@ -29,8 +29,8 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
   }
 
   public canDeactivate(): boolean {
-   // return !this.teacherForm.dirty;
-   return !this.isDirty;
+    // return !this.teacherForm.dirty;
+    return !this.isDirty;
   };
 
   ngOnInit(): void {
