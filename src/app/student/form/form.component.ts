@@ -11,8 +11,6 @@ import { Student, StudentService } from '../services/student.service';
 export class FormComponent implements OnInit, ComponentCanDeactivate {
   routeParameter: number = -1;
   student: Student = {} as Student;
-  array: number[] = [1, 9, 4];
-  arrayVal: any;
   validate = false;
   isDirty = false;
   isDisable = false;
@@ -20,9 +18,11 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
   public get RouteParameter(): number {
     return this.routeParameter;
   }
+
   public get ValidRegNo(): boolean {
     return this.validate;
   }
+
   constructor(private route: ActivatedRoute, private router: Router, private studentService: StudentService) {
     this.route.params.subscribe((parameters) => {
       if (parameters["id"]) {
@@ -30,6 +30,7 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
       }
     });
   }
+
   ngOnInit(): void {
     if (this.routeParameter > 0) {
       this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
@@ -39,11 +40,13 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
       });
     }
   }
+
   canDeactivate(): boolean {
     return !this.isDirty;
   };
+
   save() {
-    if (this.student.regNo != null && this.student.name != "" && this.student.age != null && this.student.dept != "") {
+    if (this.student.reg_no != null && this.student.name != "" && this.student.age != null && this.student.dept != "") {
       if (this.routeParameter && this.routeParameter > 0) {
         this.studentService.updateStudent(this.routeParameter, this.student)
           .subscribe((response) => {
@@ -69,11 +72,12 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
   private resetForm() {
     this.student.name = "";
     this.student.dept = "";
-    this.student.regNo = NaN;
+    this.student.reg_no = NaN;
     this.student.age = NaN;
   }
+
   public validateReg(): any {
-    this.studentService.getByRegNo(this.student.regNo).subscribe(this.studentByRegNoSuccess.bind(this));
+    this.studentService.getByRegNo(this.student.reg_no).subscribe(this.studentByRegNoSuccess.bind(this));
   }
 
   studentByRegNoSuccess(result: Student[]): void {
@@ -87,15 +91,12 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
       this.validate = true;
     }
   }
+
   disablefn(): any {
     if (this.routeParameter > 0) {
       this.isDisable = true;
     } else {
       this.isDisable = false;
     }
-  }
-  maxfn() {
-    this.arrayVal = this.array.sort();
-    console.log("pavi", this.arrayVal);
   }
 }

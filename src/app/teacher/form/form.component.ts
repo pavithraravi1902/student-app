@@ -3,6 +3,7 @@ import { ActivatedRoute, CanDeactivate, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Teacher, TeacherService } from '../service/teacher.service';
 import { ComponentCanDeactivate } from 'src/app/common-module/component-can-deactivate';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-teacher-form',
   templateUrl: './form.component.html',
@@ -10,6 +11,18 @@ import { ComponentCanDeactivate } from 'src/app/common-module/component-can-deac
   // providers: [{provide: MatFormFieldControl, useExisting: MyTelInput}]
 })
 export class FormComponent implements OnInit, ComponentCanDeactivate {
+  selectedFile: File = null;
+  onFileSelected(event: any) {
+    this.selectedFile = <File>event.target.files[0];
+  };
+  onUpload() {
+    const fd = new FormData();
+    fd.append('image', this.selectedFile, this.selectedFile.name)
+    this.http.post(`http://localhost:3000/teachers`, fd)
+      .subscribe(res => {
+        console.log(res, "it worked");
+      })
+  }
   teacherForm: FormGroup;
   routeParameter: number = -1;
   isDirty: boolean = false;
@@ -17,7 +30,7 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
     return this.routeParameter;
   }
 
-  constructor(private formBuilder: FormBuilder, private teacherService: TeacherService, private route: ActivatedRoute, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private teacherService: TeacherService, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
     this.route.params.subscribe((parameters) => {
       if (parameters["id"]) {
         this.routeParameter = Number(parameters["id"]);

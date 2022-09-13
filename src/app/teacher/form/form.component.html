@@ -3,34 +3,48 @@
     <p>Teacher No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
     {{ teacherForm.value | json }}
     <form [formGroup]="teacherForm" (ngSubmit)="onSubmit(); isDirty=false">
+        
         <mat-form-field>
             <mat-label>Name</mat-label>:
             <input matInput type="text" formControlName="name" (change)="isDirty=true" />
             <span *ngIf="teacherForm.touched && teacherForm.controls['name']?.errors?.['required']">Teacher name
                 required</span>
         </mat-form-field>
+
         <br />
         <br />
+
         <mat-form-field>
             <mat-label>Age</mat-label>:
             <input type="number" matInput formControlName="age" (change)="isDirty=true" />
             <span *ngIf="teacherForm.touched && teacherForm.controls['age']?.errors?.['required']">Teacher age
                 required</span>
         </mat-form-field>
+
         <br />
         <br />
+
         <mat-form-field>
             <mat-label>Department</mat-label>:
             <input type="text" matInput formControlName="dept" (change)="isDirty=true" />
             <span *ngIf="teacherForm.touched && teacherForm.controls['dept']?.errors?.['required']">Teacher Department
                 required</span>
         </mat-form-field>
+
         <br />
         <br />
         <div>
+        Upload Profile photo:
+            <input type="file" (change)="onFileSelected($event)">
+        </div>
+
+            <br />
+            <br />
+            
+        <div>
             <button mat-raised-button color="accent" routerLink="/teachers">Cancel</button>
             <button mat-raised-button color="accent" [disabled]="teacherForm.invalid" (change)="isDirty=false"
-                type="submit">Submit</button>
+                type="submit" (click)="onUpload()">Submit</button>
         </div>
     </form>
 

@@ -3,9 +3,21 @@
     <p>Student No: {{ RouteParameter > 0 ? RouteParameter : '--' }}</p>
     <div>
         <div>
+
+            <mat-form-field>
+                <mat-label>Id</mat-label><input matInput type="number" [disabled]="isDisable" (change)="isDirty=true"
+                    (click)="disablefn()" [(ngModel)]="student.id" required #sid="ngModel">
+                <div *ngIf="sid.invalid && sreg.touched">
+                    Register Number required.
+                </div>
+            </mat-form-field>
+
+            <br />
+            <br />
+
             <mat-form-field>
                 <mat-label>RegNo</mat-label><input matInput type="number" [disabled]="isDisable" (change)="isDirty=true"
-                    (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.regNo" required #sreg="ngModel">
+                    (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.reg_no" required #sreg="ngModel">
                 <div *ngIf="sreg.invalid && sreg.touched">
                     Register Number required.
                 </div>
@@ -13,8 +25,10 @@
                     Register Number invalid.
                 </div>
             </mat-form-field>
+
             <br />
             <br />
+
             <mat-form-field>
                 <div *ngIf="routeParameter"></div>
                 <mat-label>Name</mat-label><input matInput type="text" (change)="isDirty=true"
@@ -23,8 +37,10 @@
                     Name required.
                 </div>
             </mat-form-field>
+
             <br />
             <br />
+
             <mat-form-field>
                 <mat-label>Age</mat-label><input matInput type="number" (change)="isDirty=true"
                     [(ngModel)]="student.age" required #sage="ngModel">
@@ -32,8 +48,10 @@
                     Age required.
                 </div>
             </mat-form-field>
+
             <br />
             <br />
+
             <mat-form-field>
                 <mat-label>Department</mat-label><input matInput type="text" (change)="isDirty=true"
                     [(ngModel)]="student.dept" required #sdept="ngModel">
@@ -41,8 +59,17 @@
                     Dept required.
                 </div>
             </mat-form-field>
+
             <br />
             <br />
+
+            <div>
+                Upload Profile photo:
+                <input type="file">
+                <br />
+                <br />
+            </div>
+
             <div>
                 <button mat-raised-button color="primary" routerLink="/students" routerLinkActive="router-link-active">
                     Cancel
@@ -51,5 +78,6 @@
                     RouteParameter > 0? 'Update' : 'Create' }}
                 </button>
             </div>
+
         </div>
     </div>

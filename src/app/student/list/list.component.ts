@@ -19,7 +19,8 @@ export class ListComponent implements OnInit {
   arrange: any;
   nameFilter: string = "";
   options: any = this.nameFilter;
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  readData: any;
+  //@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
 
   constructor(private student: StudentService, private router: Router) {
@@ -31,20 +32,25 @@ export class ListComponent implements OnInit {
       console.log("Error: ", error);
     });
   }
-  girdListData: MatTableDataSource<any>;
+  //girdListData: MatTableDataSource<any>;
   displayedColumns: string[] = ["regNo", "name", "dept"];
 
   ngOnInit(): void {
     this.fillGrid();
-    this.girdListData.paginator = this.paginator;
-    console.log("pavithraravi", this.girdListData);
+    //this.girdListData.paginator = this.paginator;
+    //console.log("pavithraravi", this.girdListData);
+    this.student.getAllStudents().subscribe((res) => {
+      console.log(res, 'res==>');
+      this.readData = res.data;
+    });
   }
 
   fillGrid() {
     this.student.getAllStudents().subscribe(data => {
-      this.girdListData = new MatTableDataSource(data);
+      //this.girdListData = new MatTableDataSource(data);
     });
   }
+
   onEdit(student: Student): void {
     this.router.navigateByUrl(`students/${student.id}/edit`);
   }
@@ -52,6 +58,7 @@ export class ListComponent implements OnInit {
   onView(student: Student): void {
     this.router.navigate(["students", student.id, "view"]);
   }
+
   sortRegNo() {
     if (this.arrange) {
       this.studentInfo.sort((a: any, b: any) => a.regNo - b.regNo);
@@ -60,6 +67,7 @@ export class ListComponent implements OnInit {
     }
     this.arrange = !this.arrange;
   }
+
   sortAge() {
     if (this.arrange) {
       this.studentInfo.sort((a: any, b: any) => a.age - b.age);
@@ -68,6 +76,7 @@ export class ListComponent implements OnInit {
     }
     this.arrange = !this.arrange;
   }
+
   sortName() {
     if (this.arrange) {
       this.studentInfo.sort(function (a: any, b: any) {
@@ -82,6 +91,7 @@ export class ListComponent implements OnInit {
     }
     this.arrange = !this.arrange;
   }
+  
   sortDept() {
 
     if (this.arrange) {
