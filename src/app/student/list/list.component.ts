@@ -42,6 +42,7 @@ export class ListComponent implements OnInit {
     this.student.getAllStudents().subscribe((res) => {
       console.log(res, 'res==>');
       this.readData = res.data;
+      console.log(this.readData);
     });
   }
 

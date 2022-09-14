@@ -46,7 +46,7 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
   };
 
   save() {
-    if (this.student.reg_no != null && this.student.name != "" && this.student.age != null && this.student.dept != "") {
+    if (this.student.reg_no != null && this.student.username != "" && this.student.age != null && this.student.dept != "") {
       if (this.routeParameter && this.routeParameter > 0) {
         this.studentService.updateStudent(this.routeParameter, this.student)
           .subscribe((response) => {
@@ -70,7 +70,7 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
     }
   }
   private resetForm() {
-    this.student.name = "";
+    this.student.username = "";
     this.student.dept = "";
     this.student.reg_no = NaN;
     this.student.age = NaN;

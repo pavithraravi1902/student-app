@@ -139,6 +139,20 @@
                 <td>{{elt.username}}</td>
                 <td>{{elt.age}}</td>
                 <td>{{elt.dept}}</td>
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell>
+                        <div>
+                            <button mat-raised-button [routerLink]="['/students', elt.id, 'view']">
+                                View
+                            </button>
+                            <button mat-raised-button (click)="onEdit(elt)">
+                                Edit
+                            </button>
+                        </div>
+                    </td>
+                  </ng-container>
             </tr>
+            
         </tbody>
     </table>

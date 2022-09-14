@@ -32,7 +32,7 @@
             <mat-form-field>
                 <div *ngIf="routeParameter"></div>
                 <mat-label>Name</mat-label><input matInput type="text" (change)="isDirty=true"
-                    [(ngModel)]="student.name" required #sname="ngModel">
+                    [(ngModel)]="student.username" required #sname="ngModel">
                 <div *ngIf="sname.touched && sname.invalid">
                     Name required.
                 </div>

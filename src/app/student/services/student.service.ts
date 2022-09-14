@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 export type Student = {
   id: number;
   reg_no: number;
-  name: string;
+  username: string;
   age: number;
   dept: string; 
 }

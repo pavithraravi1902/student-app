@@ -11,6 +11,7 @@ export class ViewComponent implements OnInit {
 
   routeParameter;
   student: Student = {} as Student;
+  readData:any;
 
 
   constructor(private route: ActivatedRoute, private router: Router, private studentService: StudentService) {
@@ -18,10 +19,15 @@ export class ViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
+   /* this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
       this.student = response;
     }, (error) => {
       console.log("Error: ", error);
+    });*/
+    this.studentService.getAllStudents().subscribe((res) => {
+      console.log(res, 'res==>');
+      this.readData = res.data;
+      console.log(this.readData,"view")
     });
   }
 
