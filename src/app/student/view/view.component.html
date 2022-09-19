@@ -2,10 +2,10 @@
     <p>Student No: {{ routeParameter }}</p>
 
     <div>
-        <label>Reg No</label>: {{ readData.reg_no }} <br />
-        <label>Name</label>: {{ readData.username }} <br />
-        <label>Age</label>: {{ readData.age }} <br />
-        <label>Department</label>: {{ readData.dept }} <br />
+        <label>Reg No</label>: {{ readData[routeParameter-1].reg_no }} <br />
+        <label>Name</label>: {{ readData[routeParameter-1].username }} <br />
+        <label>Age</label>: {{ readData[routeParameter-1].age }} <br />
+        <label>Department</label>: {{ readData[routeParameter-1].dept }} <br />
     </div>
 
     <button mat-raised-button color="primary" routerLink="/students">

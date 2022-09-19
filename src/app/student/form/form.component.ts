@@ -10,10 +10,14 @@ import { Student, StudentService } from '../services/student.service';
 })
 export class FormComponent implements OnInit, ComponentCanDeactivate {
   routeParameter: number = -1;
-  student: Student = {} as Student;
+  /// student: Student = {} as Student;
   validate = false;
   isDirty = false;
   isDisable = false;
+  readData: any;
+  data: any;
+  result: any;
+  
 
   public get RouteParameter(): number {
     return this.routeParameter;
@@ -33,10 +37,18 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
 
   ngOnInit(): void {
     if (this.routeParameter > 0) {
-      this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
+      /*this.studentService.getStudentById(this.routeParameter).subscribe((response) => {
         this.student = response;
       }, (error) => {
         console.log("Error: ", error);
+      });*/
+      this.studentService.getStudentById(this.routeParameter).subscribe((res) => {
+        console.log(res, 'res==>');
+        this.readData = res;
+        //this.data = this.readData;
+        this.data= this.readData.data;
+        this.result= this.data[0];
+        console.log(this.result, "pavithra");
       });
     }
   }
@@ -46,10 +58,11 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
   };
 
   save() {
-    if (this.student.reg_no != null && this.student.username != "" && this.student.age != null && this.student.dept != "") {
+    if (this.result.reg_no != null && this.result.username != "" && this.result.age != null && this.result.dept != "") {
       if (this.routeParameter && this.routeParameter > 0) {
-        this.studentService.updateStudent(this.routeParameter, this.student)
-          .subscribe((response) => {
+        this.studentService.updateStudent(this.routeParameter, this.result)
+          .subscribe((res) => {
+            console.log(res, "update")
             confirm("Updated successfully!");
             this.router.navigate(["students"]);
           }, (error) => {
@@ -57,8 +70,9 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
           });
       }
       else {
-        this.studentService.createData(this.student)
-          .subscribe((response) => {
+        this.studentService.createData(this.readData)
+          .subscribe((res) => {
+            console.log(res, "create");
             confirm("Saved successfully!");
             this.router.navigate(["students"]);
           }, (error) => {
@@ -70,14 +84,14 @@ export class FormComponent implements OnInit, ComponentCanDeactivate {
     }
   }
   private resetForm() {
-    this.student.username = "";
-    this.student.dept = "";
-    this.student.reg_no = NaN;
-    this.student.age = NaN;
+    this.readData.username = "";
+    this.readData.dept = "";
+    this.readData.reg_no = NaN;
+    this.readData.age = NaN;
   }
 
   public validateReg(): any {
-    this.studentService.getByRegNo(this.student.reg_no).subscribe(this.studentByRegNoSuccess.bind(this));
+    this.studentService.getByRegNo(this.readData.reg_no).subscribe(this.studentByRegNoSuccess.bind(this));
   }
 
   studentByRegNoSuccess(result: Student[]): void {

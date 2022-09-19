@@ -6,7 +6,7 @@
 
             <mat-form-field>
                 <mat-label>Id</mat-label><input matInput type="number" [disabled]="isDisable" (change)="isDirty=true"
-                    (click)="disablefn()" [(ngModel)]="student.id" required #sid="ngModel">
+                    (click)="disablefn()" [(ngModel)]="result.id" required #sid="ngModel">
                 <div *ngIf="sid.invalid && sreg.touched">
                     Register Number required.
                 </div>
@@ -17,7 +17,7 @@
 
             <mat-form-field>
                 <mat-label>RegNo</mat-label><input matInput type="number" [disabled]="isDisable" (change)="isDirty=true"
-                    (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="student.reg_no" required #sreg="ngModel">
+                    (blur)="validateReg()" (click)="disablefn()" [(ngModel)]="result.reg_no" required #sreg="ngModel">
                 <div *ngIf="sreg.invalid && sreg.touched">
                     Register Number required.
                 </div>
@@ -30,9 +30,8 @@
             <br />
 
             <mat-form-field>
-                <div *ngIf="routeParameter"></div>
                 <mat-label>Name</mat-label><input matInput type="text" (change)="isDirty=true"
-                    [(ngModel)]="student.username" required #sname="ngModel">
+                    [(ngModel)]="result.username" required #sname="ngModel">
                 <div *ngIf="sname.touched && sname.invalid">
                     Name required.
                 </div>
@@ -43,7 +42,7 @@
 
             <mat-form-field>
                 <mat-label>Age</mat-label><input matInput type="number" (change)="isDirty=true"
-                    [(ngModel)]="student.age" required #sage="ngModel">
+                    [(ngModel)]="result.age" required #sage="ngModel">
                 <div *ngIf="sage.touched && sage.invalid">
                     Age required.
                 </div>
@@ -54,7 +53,7 @@
 
             <mat-form-field>
                 <mat-label>Department</mat-label><input matInput type="text" (change)="isDirty=true"
-                    [(ngModel)]="student.dept" required #sdept="ngModel">
+                    [(ngModel)]="result.dept" required #sdept="ngModel">
                 <div *ngIf="sdept.touched && sdept.invalid">
                     Dept required.
                 </div>

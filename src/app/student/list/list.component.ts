@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
     this.student.getAllStudents().subscribe((result) => {
       this.studentInfo = result;
       this.totalRecords = this.studentInfo.length;
-      console.log(this.studentInfo)
+      //console.log(this.studentInfo)
     }, (error) => {
       console.log("Error: ", error);
     });
@@ -40,9 +40,9 @@ export class ListComponent implements OnInit {
     //this.girdListData.paginator = this.paginator;
     //console.log("pavithraravi", this.girdListData);
     this.student.getAllStudents().subscribe((res) => {
-      console.log(res, 'res==>');
+      //console.log(res, 'res==>');
       this.readData = res.data;
-      console.log(this.readData);
+      //console.log(this.readData);
     });
   }
 
